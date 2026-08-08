@@ -1,0 +1,348 @@
+{
+  "assetSizes": {
+    "weilong_body_run_8dir_8f_v1.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 29,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_weapon_back_8dir_3phase_v1.png": {
+      "size": [
+        384,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 20,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_weapon_front_8dir_3phase_v1.png": {
+      "size": [
+        384,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 26,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_trigger_arm_hand_8dir_8walk_3phase_v1.png": {
+      "size": [
+        3072,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 6,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_support_arm_hand_8dir_8walk_3phase_v1.png": {
+      "size": [
+        3072,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 6,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_magazine_8dir_3phase_v1.png": {
+      "size": [
+        384,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 3,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_muzzle_8dir_3phase_v1.png": {
+      "size": [
+        384,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 2,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_weapon_back_reload_8dir_7f_v1.png": {
+      "size": [
+        896,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 20,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_weapon_front_reload_8dir_7f_v1.png": {
+      "size": [
+        896,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 26,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_reload_trigger_8dir_7f_v1.png": {
+      "size": [
+        896,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 6,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_reload_support_8dir_7f_v1.png": {
+      "size": [
+        896,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 6,
+      "fixedPaletteLimit": 32
+    },
+    "weilong_rifle_reload_magazine_8dir_7f_v1.png": {
+      "size": [
+        896,
+        1024
+      ],
+      "hardAlpha": true,
+      "greenLikeOpaquePixels": 0,
+      "opaqueColorCount": 3,
+      "fixedPaletteLimit": 32
+    }
+  },
+  "directions": {
+    "Down": {
+      "uniqueFrames": 8,
+      "footLastOpaqueY": [
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116
+      ],
+      "adjacentChangedPixels": [
+        3253,
+        3464,
+        3499,
+        3450,
+        3390,
+        3468,
+        3423,
+        3392
+      ],
+      "frame7To0ChangedPixels": 3392,
+      "closureLimit": 4723.65,
+      "closedLoop": true,
+      "upperIdentityStableAfterBobNormalization": true
+    },
+    "DownRight": {
+      "uniqueFrames": 8,
+      "footLastOpaqueY": [
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116
+      ],
+      "adjacentChangedPixels": [
+        3333,
+        3465,
+        3511,
+        3272,
+        3345,
+        3502,
+        3221,
+        3314
+      ],
+      "frame7To0ChangedPixels": 3314,
+      "closureLimit": 4739.85,
+      "closedLoop": true,
+      "upperIdentityStableAfterBobNormalization": true
+    },
+    "Right": {
+      "uniqueFrames": 8,
+      "footLastOpaqueY": [
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116
+      ],
+      "adjacentChangedPixels": [
+        2843,
+        2977,
+        2874,
+        3312,
+        3300,
+        2881,
+        2978,
+        3068
+      ],
+      "frame7To0ChangedPixels": 3068,
+      "closureLimit": 4471.2,
+      "closedLoop": true,
+      "upperIdentityStableAfterBobNormalization": true
+    },
+    "UpRight": {
+      "uniqueFrames": 8,
+      "footLastOpaqueY": [
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116
+      ],
+      "adjacentChangedPixels": [
+        3380,
+        3263,
+        3397,
+        3055,
+        3027,
+        3193,
+        3136,
+        3170
+      ],
+      "frame7To0ChangedPixels": 3170,
+      "closureLimit": 4585.95,
+      "closedLoop": true,
+      "upperIdentityStableAfterBobNormalization": true
+    },
+    "Up": {
+      "uniqueFrames": 8,
+      "footLastOpaqueY": [
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116
+      ],
+      "adjacentChangedPixels": [
+        3234,
+        3203,
+        3255,
+        3209,
+        3227,
+        3204,
+        3226,
+        3152
+      ],
+      "frame7To0ChangedPixels": 3152,
+      "closureLimit": 4394.25,
+      "closedLoop": true,
+      "upperIdentityStableAfterBobNormalization": true
+    },
+    "UpLeft": {
+      "uniqueFrames": 8,
+      "footLastOpaqueY": [
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116
+      ],
+      "adjacentChangedPixels": [
+        3151,
+        3425,
+        3403,
+        3024,
+        3198,
+        3248,
+        3150,
+        3266
+      ],
+      "frame7To0ChangedPixels": 3266,
+      "closureLimit": 4623.75,
+      "closedLoop": true,
+      "upperIdentityStableAfterBobNormalization": true
+    },
+    "Left": {
+      "uniqueFrames": 8,
+      "footLastOpaqueY": [
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116
+      ],
+      "adjacentChangedPixels": [
+        2837,
+        2858,
+        2805,
+        2884,
+        2823,
+        2827,
+        2927,
+        2845
+      ],
+      "frame7To0ChangedPixels": 2845,
+      "closureLimit": 3951.45,
+      "closedLoop": true,
+      "upperIdentityStableAfterBobNormalization": true
+    },
+    "DownLeft": {
+      "uniqueFrames": 8,
+      "footLastOpaqueY": [
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116,
+        116
+      ],
+      "adjacentChangedPixels": [
+        3559,
+        3621,
+        3930,
+        3652,
+        3577,
+        3651,
+        3808,
+        3645
+      ],
+      "frame7To0ChangedPixels": 3645,
+      "closureLimit": 5305.5,
+      "closedLoop": true,
+      "upperIdentityStableAfterBobNormalization": true
+    }
+  },
+  "hardAlpha": true,
+  "noGreenFringe": true,
+  "footAnchorVerified": [
+    64,
+    116
+  ]
+}

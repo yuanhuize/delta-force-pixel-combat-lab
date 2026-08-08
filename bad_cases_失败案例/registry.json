@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-09",
+  "defaultStatus": "REJECTED_BAD_CASE",
+  "allowedUse": [
+    "human_forensic_review",
+    "failure_analysis",
+    "qa_process_improvement"
+  ],
+  "forbiddenUse": [
+    "game_runtime",
+    "formal_preview",
+    "identity_or_motion_baseline",
+    "model_training",
+    "img2img_input",
+    "generation_iteration_baseline"
+  ],
+  "assets": [
+    {
+      "id": "weilong-prototype-1-eight-direction-eight-frame-run-rifle",
+      "path": "weilong_prototype_1",
+      "status": "REJECTED_BAD_CASE",
+      "reason": "Upper-body identity lock was combined with independently generated lower-body motion."
+    },
+    {
+      "id": "luna-prototype-4-left-leg-revision",
+      "path": "luna_prototype_4_5",
+      "status": "REJECTED_BAD_CASE",
+      "reason": "The original upper body was preserved while the generated lower body was replaced."
+    },
+    {
+      "id": "luna-prototype-5-eight-direction-eight-frame-run",
+      "path": "luna_prototype_4_5",
+      "status": "REJECTED_BAD_CASE",
+      "reason": "A preserved V4 upper-body identity source was composited over independently generated lower-body motion."
+    }
+  ]
+}

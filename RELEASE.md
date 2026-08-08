@@ -61,7 +61,6 @@ npm run release:package
 1. 在 GitHub Desktop 中选择 `combat_lab`，按界面提示在此目录创建本地仓库。
 2. 检查 Changes，确认 `library/`、`temp/`、`build/`、`profiles/`、`artifacts/`、`release/` 和 `.DS_Store` 没有进入提交。
 3. 创建初始提交，再使用 **Publish repository** 创建远程仓库；发布前确认仓库名称、所属账号和可见性。
-4. 远程地址确定后，将 `CHANGELOG.md` 底部的 `OWNER/REPOSITORY` 替换为实际仓库路径。
 
 后续版本：
 
