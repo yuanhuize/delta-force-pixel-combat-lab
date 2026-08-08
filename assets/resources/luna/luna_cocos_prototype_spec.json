@@ -1,0 +1,59 @@
+{
+  "version": "prototype-1",
+  "cellSize": [
+    128,
+    128
+  ],
+  "footAnchor": [
+    64,
+    116
+  ],
+  "directionOrder": [
+    "Down",
+    "DownRight",
+    "Right",
+    "UpRight",
+    "Up",
+    "UpLeft",
+    "Left",
+    "DownLeft"
+  ],
+  "bodyWalk": {
+    "columns": 4,
+    "rows": 8,
+    "fps": 11
+  },
+  "bow": {
+    "columns": 5,
+    "rows": 8,
+    "phases": [
+      "READY",
+      "DRAW",
+      "HOLD",
+      "RELEASE",
+      "RECOVER"
+    ]
+  },
+  "rifle": {
+    "columns": 3,
+    "rows": 8,
+    "phases": [
+      "AIM",
+      "FIRE",
+      "RECOVER"
+    ]
+  },
+  "reload": {
+    "columns": 7,
+    "rows": 8,
+    "maxMagazineDetachPx": 11
+  },
+  "invariants": [
+    "body source is the approved fixed 128x128 atlas",
+    "no per-direction body crop or scale",
+    "body, weapon and hands share one direction index",
+    "left rifle is mirrored horizontally before orientation; sight remains up and magazine down",
+    "front rifle is staged below the face",
+    "reload magazine only pulls from and reinserts into the weapon socket"
+  ]
+}

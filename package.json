@@ -1,0 +1,16 @@
+{
+  "name": "luna-rig-combat-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A focused Cocos Creator 3.8.8 lab for validating Luna's eight-direction rifle rig.",
+  "scripts": {
+    "release:package": "bash scripts/package-release.sh"
+  },
+  "engines": {
+    "cocos-creator": "3.8.8"
+  },
+  "creator": {
+    "version": "3.8.8"
+  },
+  "uuid": "689e5737-09fa-4363-aa88-53b67d424605"
+}

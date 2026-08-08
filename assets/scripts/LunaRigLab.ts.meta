@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.24",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "fa3c0f30-5ff1-4d3c-9f08-6aac84c5c501",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/scripts/LunaRigLab.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

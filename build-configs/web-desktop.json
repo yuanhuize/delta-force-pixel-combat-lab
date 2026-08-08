@@ -1,0 +1,23 @@
+{
+  "platform": "web-desktop",
+  "debug": false,
+  "buildPath": "project://build",
+  "outputName": "web-desktop",
+  "taskName": "web-desktop",
+  "startScene": "74c5d76c-0f8a-49ea-9e62-d4c477209520",
+  "scenes": [
+    {
+      "url": "db://assets/scenes/RigLab.scene",
+      "uuid": "74c5d76c-0f8a-49ea-9e62-d4c477209520"
+    }
+  ],
+  "packages": {
+    "web-desktop": {
+      "useWebGPU": false,
+      "resolution": {
+        "designWidth": 1280,
+        "designHeight": 720
+      }
+    }
+  }
+}
