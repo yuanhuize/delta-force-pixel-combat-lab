@@ -1,8 +1,10 @@
 # 更新日志
 
-本文件记录 `combat_lab` 的用户可见变更。版本号遵循[语义化版本](https://semver.org/lang/zh-CN/)，并以 `package.json` 中的 `version` 字段为唯一版本来源。
+本文件记录 `game/combat_lab` 的用户可见变更。版本号遵循[语义化版本](https://semver.org/lang/zh-CN/)，并以 `package.json` 中的 `version` 字段为唯一版本来源。
 
 ## [Unreleased]
+
+## [0.2.1] - 2026-08-09
 
 ### Changed
 
@@ -10,6 +12,14 @@
 - 角色碰撞明确为脚底半径 16px 圆形探针，不以 128×128 整张图集帧阻挡移动。
 - 增加数据 BFS 与浏览器真实按键两层可达性 QA；外厅/主厅实际轨迹宽高覆盖均超过 93%，六房均经正常门路到达。
 - 撤回原比例 3D 直接降采样的第二版本接入；双版本闸门改为等待 `Q_BRIDGE_PIPELINE_CANDIDATE_READY` 与用户批准 Q 版母版。
+- 正式工程路径从旧 `combat_lab/` 迁入 `game/combat_lab/`，并增加运行工程 `asset_manifest.json`、新来源路径和可重建目录链接说明。
+- Bad Case 的唯一权威源迁入项目根目录 `rejected/`，不再在运行工程仓库维护重复副本；`v0.2.0` 标签继续永久保留此前上传的威龙 Prototype 1、露娜 Prototype 4/5 与威龙 3D/像素化失败案例快照。
+
+### Known limitations / 已知限制
+
+- 当前仍只有 A 版威龙 V2.1 肘部身体核心；Q 版桥接母版及 B 版尚未获得用户批准，`SCENE_DUAL_VERSION_NOT_READY` 继续生效。
+- `v0.2.0` 保留为问题版本与回归基线：它只交付单角色版本，运行时使用 `runtimeScale=2`，QA 只覆盖短距离移动，未验证六房完整门路和全图可达性。
+- `v0.2.1` 是 A 版比例、碰撞、可达性和项目路径治理修复，不宣称完成“3D 干员 → Q 版像素素材”工作流。
 
 ## [0.2.0] - 2026-08-09
 
@@ -47,6 +57,7 @@
 - 支持八方向移动、快速转向、瞄准、开火、换弹和显示层级验证。
 - 提供 Web Desktop 构建配置和浏览器烟雾测试脚本。
 
-[Unreleased]: https://github.com/yuanhuize/delta-force-pixel-combat-lab/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/yuanhuize/delta-force-pixel-combat-lab/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/yuanhuize/delta-force-pixel-combat-lab/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/yuanhuize/delta-force-pixel-combat-lab/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/yuanhuize/delta-force-pixel-combat-lab/releases/tag/v0.1.0

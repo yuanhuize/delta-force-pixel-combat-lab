@@ -23,7 +23,7 @@
 
 ## 构建 Web Desktop 版本
 
-在 `combat_lab` 目录执行：
+在 `game/combat_lab` 目录执行：
 
 ```bash
 COCOS_CREATOR='/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS/CocosCreator'
@@ -49,7 +49,7 @@ node scripts/smoke-test.cjs
 
 ## 生成 Release 附件
 
-源码仓不提交 `build/` 和 `release/`。确认构建通过后，在 `combat_lab` 目录执行：
+源码仓不提交 `build/` 和 `release/`。确认构建通过后，在 `game/combat_lab` 目录执行：
 
 ```bash
 npm run release:package
@@ -61,7 +61,7 @@ npm run release:package
 
 首次建立仓库时：
 
-1. 在 GitHub Desktop 中选择 `combat_lab`，按界面提示在此目录创建本地仓库。
+1. 在 GitHub Desktop 中选择 `game/combat_lab`，按界面提示在此目录创建本地仓库。
 2. 检查 Changes，确认 `library/`、`temp/`、`build/`、`profiles/`、`artifacts/`、`release/` 和 `.DS_Store` 没有进入提交。
 3. 创建初始提交，再使用 **Publish repository** 创建远程仓库；发布前确认仓库名称、所属账号和可见性。
 

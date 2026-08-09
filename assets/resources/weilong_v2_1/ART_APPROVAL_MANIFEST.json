@@ -2,7 +2,7 @@
   "status": "ART_APPROVED",
   "approvedVersion": "V2.1",
   "approvedDate": "2026-08-09",
-  "sourceApprovalManifest": "/Users/yuanhuize/codex work/三角洲行动-像素版/art_demos/weilong_elbow_core_run_v2_1/ART_APPROVED_V2_1.md",
+  "sourceApprovalManifest": "/Users/yuanhuize/codex work/三角洲行动-像素版/production/characters/weilong/elbow_core_run/v002_r001/ART_APPROVED_V2_1.md",
   "runtimeAssets": {
     "atlas": {
       "path": "weilong_v2_1/weilong_body_core_run_8dir_12f_v2_1",

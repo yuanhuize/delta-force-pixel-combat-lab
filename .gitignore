@@ -4,11 +4,16 @@
 #///////////////////////////
 
 /library/
+/library
 /temp/
+/temp
 /local/
 /build/
+/build
 /profiles/
+/profiles
 /artifacts/
+/artifacts
 /native/engine/android/**/*/assets
 
 # Local release packages (upload these to GitHub Releases instead)
@@ -18,6 +23,7 @@
 # NPM
 #//////////////////////////
 node_modules/
+/node_modules
 
 #//////////////////////////
 # VSCode

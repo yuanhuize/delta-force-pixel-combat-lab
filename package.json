@@ -1,6 +1,6 @@
 {
   "name": "president-office-r2-combat-lab",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "Cocos Creator 3.8.8 six-room President Office R2 lab with the ART_APPROVED Weilong V2.1 operator.",
   "scripts": {

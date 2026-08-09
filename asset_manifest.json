@@ -1,0 +1,20 @@
+{
+  "asset_id": "combat_lab_runtime",
+  "display_name": "像素版三角洲战斗与六房场景运行工程",
+  "version": "v002",
+  "revision": "r001",
+  "status": "approved",
+  "source_of_truth": "game/combat_lab/",
+  "owner": "scene_and_runtime",
+  "dependencies": [
+    "production/maps/president_office/v002/",
+    "production/characters/weilong/elbow_core_run/v002_r001/"
+  ],
+  "game_usage": ["president_office_r2_six_room_preview"],
+  "derived_copies": [
+    "assets/resources/president_office_r2/",
+    "assets/resources/weilong_v2_1/"
+  ],
+  "generated_links": ["artifacts", "build", "library", "node_modules", "profiles", "temp"],
+  "migration_date": "2026-08-09"
+}

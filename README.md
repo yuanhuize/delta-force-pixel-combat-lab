@@ -4,6 +4,7 @@
 
 - A 版场景验收：`A_SCALE1_SCENE_QA_PASS_B_Q_BRIDGE_LOCKED`
 - 双版本闸门：`SCENE_DUAL_VERSION_NOT_READY`
+- 当前发布：`v0.2.1`（A 版比例、碰撞、全图可达性与迁移路径修复）
 - 场景版本：`President Office R2 / six-room`
 - 像素角色：`ART_APPROVED / Weilong V2.1 elbow body core`
 - 第二版本：等待 `Q_BRIDGE_PIPELINE_CANDIDATE_READY` 与用户批准 Q 版母版；当前不加载、不混入 A 版
@@ -27,14 +28,14 @@
 
 ## 项目与上传目录（English / 中文）
 
-GitHub 仓库根目录就是 `combat_lab/`（Combat Lab / 战斗试验台项目），不要上传它外侧的 `art_demos/`、本地缓存或大型 Blender 源文件。
+GitHub 仓库根目录就是 `game/combat_lab/`（Combat Lab / 战斗试验台项目）。不要上传仓库外侧的 `production/`、`prototypes/`、`references/`、`rejected/`、`generated/` 或大型 Blender 源文件。
 
 | 文件夹 | 中文名称 | 用途与上传规则 |
 | --- | --- | --- |
 | `assets/` | Cocos 正式资源与源码 | 上传；只允许场景实际使用的批准资源、场景和 TypeScript 脚本 |
 | `assets/resources/president_office_r2/` | 总裁室 R2 六房资源 | 上传；地图、房间拓扑、门、碰撞和角色契约 |
 | `assets/resources/weilong_v2_1/` | 威龙 V2.1 正式运行资源 | 上传；仅 `ART_APPROVED` 身体核心、肘点、spec 和批准清单 |
-| `bad_cases_失败案例/` | Bad Cases / 失败案例档案 | 上传；与运行时隔离，只供人工取证复盘 |
+| `asset_manifest.json` | Runtime Manifest / 运行工程清单 | 上传；记录运行工程权威源、依赖、正式副本和可重建目录 |
 | `docs/` | Documentation / 项目与 QA 文档 | 上传；场景验收、资源哈希和已知限制 |
 | `scripts/` | Build & QA Scripts / 构建与质检脚本 | 上传；运行时闸门、浏览器 smoke 和发布打包 |
 | `build-configs/` | Build Configurations / 构建配置 | 上传；Web Desktop 构建入口 |
@@ -42,9 +43,11 @@ GitHub 仓库根目录就是 `combat_lab/`（Combat Lab / 战斗试验台项目�
 | `release/` | Release Attachments / 发布附件 | 不提交源码仓；ZIP 与 `.sha256` 上传到 GitHub Release |
 | `library/`、`temp/`、`profiles/`、`artifacts/` | Cache & QA Output / 缓存与本地 QA 输出 | 不提交；均可由源码和脚本重建 |
 
+Bad Case 的唯一权威源已经迁入项目根目录 `rejected/`，与 `game/` 运行工程物理隔离，因此当前运行仓库不再保存第二份副本。GitHub 上此前上传的完整失败案例仍由 [`v0.2.0` 历史标签](https://github.com/yuanhuize/delta-force-pixel-combat-lab/tree/v0.2.0/bad_cases_%E5%A4%B1%E8%B4%A5%E6%A1%88%E4%BE%8B)永久保留，不覆盖、不删除。
+
 ## 打开与运行
 
-1. 用 Cocos Creator 3.8.8 打开 `combat_lab`。
+1. 用 Cocos Creator 3.8.8 打开 `game/combat_lab`。
 2. 打开 `assets/scenes/PresidentOfficeR2.scene`。
 3. 点击预览，或使用 `build-configs/web-desktop.json` 构建 Web Desktop。
 
@@ -90,6 +93,6 @@ COCOS_CREATOR='/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS
 
 威龙 Prototype 1、威龙 test02、威龙 V1/V2 候选、露娜 Prototype 4/5、`fullbody_source`、3D 128 proof 和原比例 3D 直接降采样不得位于正式运行资源目录或被场景加载。第二版本只有在 `Q_BRIDGE_PIPELINE_CANDIDATE_READY` 和用户批准 Q 版母版两项同时满足后才可另行接入。
 
-失败案例包括用户要求保留的威龙 Prototype 1、露娜 Prototype 4/5，以及写实 PBR 直缩、共享变形笼 Q 化、五关键姿势＋正弦摆腿和上下半身分层合成四组威龙反例。所有条目均标记为 `REJECTED_BAD_CASE`、`forensic review only`，禁止游戏、生图、img2img、训练与迭代基线用途；详见 `bad_cases_失败案例/README.md` 和 `bad_cases_失败案例/registry.json`。
+失败案例包括用户要求保留的威龙 Prototype 1、露娜 Prototype 4/5，以及写实 PBR 直缩、共享变形笼 Q 化、五关键姿势＋正弦摆腿和上下半身分层合成四组威龙反例。所有条目均标记为 `REJECTED_BAD_CASE`、`forensic review only`，禁止游戏、生图、img2img、训练与迭代基线用途；本地权威登记位于项目根目录 `rejected/registry.json`，GitHub 历史快照见上方 `v0.2.0` 链接。
 
 版本说明见 `CHANGELOG.md`，构建、校验和与 GitHub 发布流程见 `RELEASE.md`。
