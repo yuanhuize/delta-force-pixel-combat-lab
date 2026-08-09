@@ -1,11 +1,14 @@
 # 总裁室 R2 × 威龙 V2.1 场景集成 QA
 
-## 最终闸门
+## 当前闸门
 
-- 场景自验：`SCENE_INTEGRATION_QA_PASS`
+- A 版场景自验：`A_SCALE1_SCENE_QA_PASS_B_Q_BRIDGE_LOCKED`
+- A 版可达性：`A_SCALE1_FULL_REACHABILITY_PASS_B_Q_BRIDGE_LOCKED`
 - 像素角色：`ART_APPROVED / V2.1`
-- 3D 分支：`3D_APPROVED_TECH_PROOF_ONLY`，无运行入口，不与像素图集混合
-- 运行内容：批准的肘部身体核心；无攻击手臂、手、枪、攻击或换弹层
+- 双版本交付：`SCENE_DUAL_VERSION_NOT_READY`
+- 第二版本：等待 `Q_BRIDGE_PIPELINE_CANDIDATE_READY` 与用户批准 Q 版母版
+
+当前运行内容只有批准的肘部身体核心；无攻击手臂、手、枪、攻击或换弹层。原比例 3D 直接降采样已从正式 Cocos 资源撤出，不可作为第二版本。
 
 ## 冻结资源与哈希
 
@@ -15,7 +18,7 @@
 | `weilong_elbow_anchors_8dir_12f_v2_1.json` | `9a59fa24f0c32da775416eafe57fcf4bc0dfa344b607923c8cca644ad598416d` |
 | `spec_v2_1.json` | `14ced3c8c6259fc7905d1f1bd0efdc40ca14bc1478c732ddeba5ac67a7785fd8` |
 
-静态闸门同时检查 1536×1024 图集尺寸、128×128 cell、方向顺序、12 帧、18fps、脚点 `[64,116]`、2×整数缩放、pixel-snap、nearest/no-mip 纹理元数据及禁止资源清单。
+静态闸门检查 1536×1024 图集、128×128 cell、方向顺序、12 帧、18fps、脚点 `[64,116]`、运行时 1×、pixel-snap、nearest/no-mip 纹理元数据和禁止资源。来源 spec 中的 2×只作为上游预览比例记录，不再用于六房运行时。
 
 ## Cocos 入口
 
@@ -23,36 +26,39 @@
 - 场景与角色控制：`assets/scripts/PresidentOfficeR2Lab.ts`
 - 动画时钟：`assets/scripts/ApprovedOperatorAtlasContract.ts`
 - 正式角色资源：`assets/resources/weilong_v2_1/`
+- 双版本锁定契约：`assets/resources/president_office_r2/operator_contract/dual_version_runtime_contract_r1.json`
 - Web 构建：`build/web-desktop/index.html`
-- 本机打开：`./run-lab.command`
 
 ## 2026-08-09 实跑结果
 
 - 1280×720 canvas；960×540 局部跟随视窗；地图保持 1×。
-- 六房全部 `ready=true`：西走廊、东走廊、外厅、主厅、左刷卡房、右影院。
-- 八方向顺序与批准 spec 一致，所有方向均显示合法的 `walkFrame 0–11`。
-- 12 帧动画以 18fps 连续推进；采样覆盖 10 个不同帧值。
-- 方向由 Right 切换到 UpRight 时，`walkFrame` 为 `5 → 5`，证明未重置相位。
-- 渲染位置始终为整数，运行缩放固定为 2×。
-- 左刷卡门：无卡阻挡，QA 卡授权后通过。
-- 右影院开放门洞：可返回主厅。
-- 主厅—外厅中央门：可往返。
-- 外厅下墙保持封闭；左边界碰撞通过。
-- Chrome `pageerror=0`、`console.error=0`、`console.warning=0`。
+- A 版运行缩放固定 1×，可见高度约 86–92px；nearest、pixel-snap、脚点 `[64,116]`。
+- 八方向顺序与批准 spec 一致；12 帧动画以 18fps 连续推进。
+- Right → UpRight 的 `walkFrame` 为 `5 → 5`，证明转向没有重置相位。
+- 碰撞按脚底半径 16px 圆形探针判断，不使用整张 128 图集阻挡。
+- 外厅真实轨迹：`x 67–1603`、`y 84–861`；宽覆盖 `96.79%`，高覆盖 `93.05%`。
+- 主厅真实轨迹：`x 45–1619`、`y 46–882`；宽覆盖 `97.04%`，高覆盖 `94.46%`。
+- 正常门路依次验证 D1、D1_BACK、D2、D2_BACK、D3、D4、D4_BACK、O1、O1_BACK，六房全部到达；未用 1–6 代替此可达性结论。
+- 左刷卡门无卡阻挡、QA 卡授权后通过；右影院门洞和主厅—外厅中央门可往返。
+- 浏览器 `pageerror=0`、`console.error=0`、`console.warning=0`。
+- 按 V 只显示 Q Bridge／用户批准闸门提示，角色仍保持 `A_ART`。
 
 证据：
 
 - `artifacts/president_office_r2/smoke-result.json`
-- `artifacts/president_office_r2/operator_8dir/`
-- `artifacts/president_office_r2/weilong_v2_1_8dir_qa.gif`
-- `artifacts/president_office_r2/cocos-web-desktop-build-2026-08-09.log`
+- `artifacts/president_office_r2/reachability-data-audit.json`
+- `artifacts/president_office_r2/reachability-browser-result.json`
+- `artifacts/president_office_r2/a_scale1_outside_full_reach.png`
+- `artifacts/president_office_r2/a_scale1_main_full_reach.png`
+- `artifacts/president_office_r2/iab_a_scale1_scene.png`
+- `artifacts/president_office_r2/iab_q_bridge_gate_locked.png`
 
 ## 构建说明
 
-Cocos Creator 3.8.8 无头进程仍会在完成后返回退出码 36，并在缓存引擎阶段记录子进程 `SIGTERM`；同一日志最终明确到达 `build Task (web-desktop) Finished`。最终 `index.html` 与 `settings.json` 均存在，且该实际构建已由 Chrome 完整加载并通过上述 smoke，因此以产物完整性和浏览器实跑作为构建成功依据。
+Cocos Creator 3.8.8 日志最终到达 `build Task (web-desktop) Finished`。最终 `index.html` 与 `settings.json` 均存在，并由浏览器重新加载该构建完成实跑。
 
 ## 已知限制
 
 - 本轮没有攻击手臂、手、枪、攻击或换弹；不得从 `fullbody_source` 偷回完整手臂。
-- 3D V2 仅为独立技术对照资料，未在此 Cocos 主场景建立入口。
+- 第二版本尚未接入；必须先获得 Q Bridge 管线候选，再由用户批准 Q 版母版。
 - QA 的数字键切房、K 键钥匙卡和 C 键碰撞层属于测试工具，不是正式玩法 UI。

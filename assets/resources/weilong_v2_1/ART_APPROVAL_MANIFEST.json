@@ -26,7 +26,8 @@
     "framesPerDirection": 12,
     "fps": 18,
     "footPoint": [64, 116],
-    "runtimeScale": 2,
+    "sourcePreviewScale": 2,
+    "runtimeScale": 1,
     "filter": "nearest",
     "pixelSnap": true,
     "preserveWalkFrameOnDirectionChange": true

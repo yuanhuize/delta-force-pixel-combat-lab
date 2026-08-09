@@ -12,10 +12,11 @@ export const APPROVED_OPERATOR_ATLAS_CONTRACT = Object.freeze({
   framesPerDirection: 12,
   fps: 18,
   footPoint: [64, 116] as const,
-  runtimeScale: 2,
+  sourcePreviewScale: 2,
+  runtimeScale: 1,
   preserveWalkFrameOnDirectionChange: true,
   pixelSnap: true,
-  allowedRuntimeScales: [1, 2, 3] as const,
+  allowedRuntimeScales: [1] as const,
 });
 
 /**
@@ -48,7 +49,7 @@ export class ApprovedOperatorAnimationClock {
   }
 
   static assertIntegerScale(scale: number): void {
-    if (!Number.isInteger(scale) || !APPROVED_OPERATOR_ATLAS_CONTRACT.allowedRuntimeScales.includes(scale as 1 | 2 | 3)) {
+    if (!Number.isInteger(scale) || !APPROVED_OPERATOR_ATLAS_CONTRACT.allowedRuntimeScales.includes(scale as 1)) {
       throw new Error(`Operator atlas scale must be an allowed integer; received ${scale}`);
     }
   }

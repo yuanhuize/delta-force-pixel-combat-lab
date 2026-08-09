@@ -18,7 +18,7 @@
 2. 确认工作区只包含本次版本需要的源码、资源和文档变更。
 3. 更新 `package.json` 的 `version`，并把 `CHANGELOG.md` 中 `[Unreleased]` 的内容归入对应版本和发布日期。
 4. 确认 tag 名与版本严格对应：`package.json` 为 `0.1.1` 时，tag 必须为 `v0.1.1`。
-5. 执行 `npm run verify:runtime-gate`，确认六房、碰撞、角色哈希、nearest 元数据、禁止资源和独立 3D 闸门全部通过。
+5. 执行 `npm run verify:runtime-gate` 与 `npm run test:reachability-data`，确认六房、脚底碰撞、角色哈希、nearest 元数据、禁止资源和 Q Bridge 锁定闸门全部通过。
 6. 使用项目内的 `build-configs/web-desktop.json` 重新构建，不复用旧版本产物。
 
 ## 构建 Web Desktop 版本
@@ -43,7 +43,9 @@ test -f build/web-desktop/src/settings.json
 node scripts/smoke-test.cjs
 ```
 
-烟雾测试必须验证六房逐一到达、八方向映射、12 帧/18fps 动画、转向保持 `walkFrame`、2×整数缩放与 pixel-snap、左刷卡门锁定/解锁、右影院开放门洞、主厅—外厅中央门往返和外厅边界阻挡。测试结果必须显示 `SCENE_INTEGRATION_QA_PASS`、`ART_APPROVED`、`3D_APPROVED_TECH_PROOF_ONLY`，且 `errors`、`warnings` 均为空数组。
+烟雾测试必须验证八方向映射、12 帧/18fps 动画、转向保持 `walkFrame`、1×整数缩放与 pixel-snap、左刷卡门锁定/解锁、右影院开放门洞、主厅—外厅中央门往返和外厅边界阻挡。随后执行 `npm run test:reachability-browser`，不得使用 1–6 切房代替正常门路；外厅和主厅实际轨迹宽、高覆盖均须达到 70%，六房必须经正常房门到达。结果必须显示 `A_SCALE1_SCENE_QA_PASS_B_Q_BRIDGE_LOCKED` 与 `A_SCALE1_FULL_REACHABILITY_PASS_B_Q_BRIDGE_LOCKED`，且 `errors`、`warnings` 均为空数组。
+
+双版本交付仍关闭。原比例 3D 直接降采样不得进入发布资源；第二版本必须同时满足 `Q_BRIDGE_PIPELINE_CANDIDATE_READY` 和用户批准 Q 版母版。
 
 ## 生成 Release 附件
 

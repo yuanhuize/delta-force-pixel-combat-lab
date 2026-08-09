@@ -9,6 +9,7 @@ const dataRoot = path.join(resourcesRoot, 'president_office_r2');
 const graphPath = path.join(dataRoot, 'data/president_office_room_graph_r2.json');
 const roomsPath = path.join(dataRoot, 'data/president_office_rooms_r2.json');
 const contractPath = path.join(dataRoot, 'operator_contract/approved_operator_atlas_contract_r1.json');
+const dualContractPath = path.join(dataRoot, 'operator_contract/dual_version_runtime_contract_r1.json');
 const operatorRoot = path.join(resourcesRoot, 'weilong_v2_1');
 const operatorAtlasPath = path.join(operatorRoot, 'weilong_body_core_run_8dir_12f_v2_1.png');
 const operatorAnchorsPath = path.join(operatorRoot, 'weilong_elbow_anchors_8dir_12f_v2_1.json');
@@ -119,6 +120,7 @@ assert(!/LunaRigLab|test0?2/i.test(sceneText), 'legacy character runtime referen
 const graph = readJson(graphPath);
 const roomsConfig = readJson(roomsPath);
 const contract = readJson(contractPath);
+const dualContract = readJson(dualContractPath);
 const operatorSpec = readJson(operatorSpecPath);
 const operatorAnchors = readJson(operatorAnchorsPath);
 const operatorApproval = readJson(operatorApprovalPath);
@@ -163,20 +165,39 @@ assert(contract.directionCount === 8 && contract.framesPerDirection === 12 && co
 assert(contract.preserveWalkFrameOnDirectionChange === true, 'direction switching must preserve walkFrame');
 assert(contract.filter === 'nearest' && contract.pixelSnap === true, 'nearest and pixel-snap are required');
 assert(JSON.stringify(contract.footAnchor) === JSON.stringify([64, 116]), 'operator foot anchor must be [64,116]');
-assert(contract.runtimeScale === 2, 'operator runtime scale must be the approved integer 2x');
+assert(contract.sourcePreviewScale === 2, 'operator source preview scale provenance must remain 2x');
+assert(contract.runtimeScale === 1, 'art operator runtime scale must be corrected to 1x for the room maps');
 assert(contract.allowedRuntimeScales.every(Number.isInteger), 'all allowed operator scales must be integers');
-assert(contract.forbiddenRuntimeScales.includes(1.5), '1.5x operator scale must remain forbidden');
+assert(contract.forbiddenRuntimeScales.includes(1.5) && contract.forbiddenRuntimeScales.includes(2), '1.5x and 2x art runtime scales must be forbidden');
 assert(contract.threeDBranch.status === '3D_APPROVED_TECH_PROOF_ONLY', '3D V2 approval scope must remain TECH_PROOF_ONLY');
 assert(contract.threeDBranch.approvedAssetId === 'WL_Tactical_Rifle_Run_V2', 'unexpected approved 3D technical proof asset');
 assert(contract.threeDBranch.runtimeEntry === null, '3D technical proof must not gain a runtime entry implicitly');
 assert(contract.threeDBranch.formalPixelAsset === false && contract.threeDBranch.proof128IsFormalPixelAsset === false, '3D/128 proofs must not be treated as formal pixel art');
 assert(contract.threeDBranch.mixWithPixelAtlas === false, '3D technical proof must not mix with the pixel atlas');
 
+assert(dualContract.status === 'SCENE_DUAL_VERSION_NOT_READY', 'dual-version scene must remain closed until Q Bridge and user approval arrive');
+assert(dualContract.switchKey === 'V', 'dual-version switch key must be V');
+assert(JSON.stringify(dualContract.shared.directionOrder) === JSON.stringify(expectedDirections), 'dual-version direction order mismatch');
+assert(JSON.stringify(dualContract.shared.targetVisibleHeight) === JSON.stringify([88, 96]), 'dual-version visible-height target mismatch');
+assert(dualContract.shared.filter === 'nearest' && dualContract.shared.pixelSnap === true, 'dual-version nearest/pixel-snap mismatch');
+assert(dualContract.shared.collisionShape === 'foot_circle' && dualContract.shared.collisionRadius === roomsConfig.probeRadius, 'runtime collision must be the configured foot circle');
+assert(dualContract.shared.mixedLayersAllowed === false, 'A/B mixed layers must be forbidden');
+assert(dualContract.versions.A_ART.status === 'ART_APPROVED' && dualContract.versions.A_ART.runtimeScale === 1, 'A art version must be approved and 1x');
+assert(dualContract.versions.A_ART.assetPath === contract.assetPath && dualContract.versions.A_ART.framesPerDirection === 12, 'A art version runtime contract mismatch');
+assert(dualContract.versions.A_ART.containsForearmsHandsRifle === false, 'A art version must not claim forearms/hands/rifle');
+const qBridge = dualContract.versions.B_Q_BRIDGE;
+assert(qBridge.status === 'WAITING_Q_BRIDGE_PIPELINE_CANDIDATE_READY_AND_USER_APPROVED_Q_MASTER', 'B must remain locked until Q Bridge and user-approved Q master are both available');
+assert(qBridge.assetPath === null && qBridge.specPath === null && qBridge.approvalManifestPath === null, 'locked Q Bridge branch must not expose runtime assets');
+assert(qBridge.framesPerDirection === null && qBridge.fps === null && qBridge.cell === null && qBridge.footPoint === null && qBridge.runtimeScale === null, 'locked Q Bridge branch must not freeze an unapproved runtime contract');
+assert(qBridge.containsCompleteBodyArmsHandsRifle === true, 'Q Bridge interface must require a complete character, arms, hands, and rifle');
+assert(qBridge.prerequisites.qBridgePipelineCandidateReady === false && qBridge.prerequisites.userApprovedQMaster === false, 'Q Bridge prerequisites must remain unfulfilled');
+assert(Object.values(dualContract.runtimeRestrictions).every(value => value === false), 'all dual-version mixing/proof shortcuts must stay disabled');
+
 assert(JSON.stringify(operatorSpec.cell) === JSON.stringify([128, 128]), 'approved spec cell mismatch');
 assert(JSON.stringify(operatorSpec.directions) === JSON.stringify(expectedDirections), 'approved spec direction order mismatch');
 assert(operatorSpec.framesPerDirection === 12 && operatorSpec.fps === 18, 'approved spec animation timing mismatch');
 assert(JSON.stringify(operatorSpec.footPoint) === JSON.stringify([64, 116]), 'approved spec foot point mismatch');
-assert(operatorSpec.characterPreviewScale === 2 && operatorSpec.movementPixelSnap === true, 'approved spec scale/pixel-snap mismatch');
+assert(operatorSpec.characterPreviewScale === 2 && operatorSpec.movementPixelSnap === true, 'approved source preview scale/pixel-snap provenance mismatch');
 assert(operatorSpec.bodySplit === false, 'approved spec must describe one complete body core, not a body split');
 
 assert(operatorAnchors.schemaVersion === '2.1', 'approved anchors schema mismatch');
@@ -189,7 +210,8 @@ for (const direction of expectedDirections) {
 
 assert(operatorApproval.status === 'ART_APPROVED' && operatorApproval.approvedVersion === 'V2.1', 'PM approval manifest mismatch');
 assert(JSON.stringify(operatorApproval.runtimeContract.directions) === JSON.stringify(expectedDirections), 'approval manifest direction order mismatch');
-assert(operatorApproval.runtimeContract.runtimeScale === 2 && operatorApproval.runtimeContract.pixelSnap === true, 'approval manifest runtime scale/pixel-snap mismatch');
+assert(operatorApproval.runtimeContract.sourcePreviewScale === 2, 'approval manifest must preserve the source preview scale provenance');
+assert(operatorApproval.runtimeContract.runtimeScale === 1 && operatorApproval.runtimeContract.pixelSnap === true, 'approval manifest corrected runtime scale/pixel-snap mismatch');
 assert(operatorApproval.restrictions.runtimeBody === 'elbow_body_core_only', 'runtime must use only the elbow body core');
 assert(operatorApproval.restrictions.fullbodySourceRuntimeAllowed === false, 'fullbody source must remain QA-only');
 assert(operatorApproval.restrictions.attackArmsHandsWeaponsIncluded === false, 'attack hands/weapon must remain absent in this integration');
@@ -210,12 +232,15 @@ assert(!/(test0?2|prototype[_ -]?1|luna[_ -]?(v|prototype)?[_ -]?[345]|frames_12
 
 console.log(JSON.stringify({
   ok: true,
-  status: 'ART_APPROVED_RUNTIME_STATIC_OK',
+  status: 'SCENE_DUAL_VERSION_NOT_READY_A_STATIC_OK',
   rooms: expectedRooms.length,
   runtimeFiles: runtimeFiles.length,
   operatorGate: contract.status,
   threeDGate: contract.threeDBranch.status,
   operatorVersion: contract.approvedVersion,
+  artRuntimeScale: contract.runtimeScale,
+  dualVersionGate: dualContract.status,
+  bVersionStatus: dualContract.versions.B_Q_BRIDGE.status,
   operatorRuntimeFiles: formalOperatorFiles,
   operatorHashes: Object.fromEntries(Object.entries(expectedRuntimeHashes).map(([file]) => [path.basename(file), sha256(file)])),
 }, null, 2));

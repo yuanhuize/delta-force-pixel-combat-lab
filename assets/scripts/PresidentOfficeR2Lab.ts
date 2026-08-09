@@ -134,6 +134,40 @@ interface OperatorApprovalData {
   };
 }
 
+interface DualVersionContractData {
+  status?: string;
+  switchKey?: string;
+  shared?: {
+    directionOrder?: string[];
+    targetVisibleHeight?: [number, number];
+    filter?: string;
+    pixelSnap?: boolean;
+    collisionShape?: string;
+    collisionRadius?: number;
+    mixedLayersAllowed?: boolean;
+  };
+  versions?: {
+    A_ART?: { status?: string; assetPath?: string; framesPerDirection?: number; runtimeScale?: number; containsForearmsHandsRifle?: boolean };
+    B_Q_BRIDGE?: {
+      status?: string;
+      assetPath?: null;
+      specPath?: null;
+      approvalManifestPath?: null;
+      framesPerDirection?: null;
+      containsCompleteBodyArmsHandsRifle?: boolean;
+      prerequisites?: { qBridgePipelineCandidateReady?: boolean; userApprovedQMaster?: boolean };
+    };
+  };
+  runtimeRestrictions?: {
+    aAndBShareFrames?: boolean;
+    aAndBShareLayers?: boolean;
+    bMayMasqueradeAsArtApproved?: boolean;
+    singleDirection3DProofAllowed?: boolean;
+    threeD128ProofAllowed?: boolean;
+    rawThreeDDirectDownsampleAllowed?: boolean;
+  };
+}
+
 const ROOM_ORDER: RoomId[] = [
   'west_entry_corridor',
   'east_entry_corridor',
@@ -180,6 +214,7 @@ export class PresidentOfficeR2Lab extends Component {
   private operatorSprite!: Sprite;
   private operatorFrames: SpriteFrame[][] = [];
   private animationClock = new ApprovedOperatorAnimationClock();
+  private dualContract!: DualVersionContractData;
   private operatorMoving = false;
   private roomLabel!: Label;
   private statusLabel!: Label;
@@ -249,9 +284,9 @@ export class PresidentOfficeR2Lab extends Component {
     this.statusLabel = this.createLabel('StatusLabel', 0, 294, 14, COLORS.cyan, 1220);
     this.statusLabel.string = '读取正式 Cocos 地图资源与独立碰撞数据……';
     this.helpLabel = this.createLabel('HelpLabel', 0, -314, 13, COLORS.text, 1230);
-    this.helpLabel.string = 'WASD/方向键移动　Shift 快速移动　E/空格开门　K 调试钥匙卡　C 碰撞层　1–6 QA 切房　R 重置';
+    this.helpLabel.string = 'WASD/方向键移动　Shift 快速移动　E/空格开门　V 查看B版闸门　K 调试卡　C 碰撞层　1–6 QA切房　R 重置';
     this.gateLabel = this.createLabel('GateLabel', 0, -336, 11, COLORS.muted, 1230);
-    this.gateLabel.string = 'ART_APPROVED · 威龙 V2.1 肘部身体核心 · 2× nearest · 3D V2 TECH_PROOF_ONLY（未加载）';
+    this.gateLabel.string = 'A 美术版 · 威龙 V2.1 肘部身体核心 · 1× nearest · B 等待 Q Bridge 与用户批准Q版母版';
 
     this.viewportNode = new Node('FollowCameraViewport960x540');
     this.viewportNode.layer = this.node.layer;
@@ -339,6 +374,8 @@ export class PresidentOfficeR2Lab extends Component {
     } else if (event.keyCode === KeyCode.KEY_R) {
       this.logicalPosition.set(this.currentRoom.spawn[0], this.currentRoom.spawn[1]);
       this.toast('已重置到当前房间出生点');
+    } else if (event.keyCode === KeyCode.KEY_V) {
+      this.toast('B 版等待 Q_BRIDGE_PIPELINE_CANDIDATE_READY 与用户批准Q版母版；当前保持 A 美术版');
     } else {
       const jumpIndex = this.qaRoomIndex(event.keyCode);
       if (jumpIndex >= 0) this.switchRoom(ROOM_ORDER[jumpIndex]);
@@ -506,20 +543,23 @@ export class PresidentOfficeR2Lab extends Component {
 
   private async loadSceneAssets(): Promise<void> {
     try {
-      const [configAsset, graphAsset, contractAsset, specAsset, anchorsAsset, approvalAsset] = await Promise.all([
+      const [configAsset, graphAsset, contractAsset, dualContractAsset, specAsset, anchorsAsset, approvalAsset] = await Promise.all([
         this.loadJson('president_office_r2/data/president_office_rooms_r2'),
         this.loadJson('president_office_r2/data/president_office_room_graph_r2'),
         this.loadJson('president_office_r2/operator_contract/approved_operator_atlas_contract_r1'),
+        this.loadJson('president_office_r2/operator_contract/dual_version_runtime_contract_r1'),
         this.loadJson(APPROVED_OPERATOR_ATLAS_CONTRACT.specPath),
         this.loadJson(APPROVED_OPERATOR_ATLAS_CONTRACT.anchorsPath),
         this.loadJson(APPROVED_OPERATOR_ATLAS_CONTRACT.approvalManifestPath),
       ]);
       this.config = configAsset.json as RoomsConfig;
+      this.dualContract = dualContractAsset.json as DualVersionContractData;
       const graph = graphAsset.json as { rooms?: Record<string, unknown> };
       const contract = contractAsset.json as OperatorContractData;
       this.validateRuntimeGate(
         graph,
         contract,
+        this.dualContract,
         specAsset.json as OperatorSpecData,
         anchorsAsset.json as OperatorAnchorsData,
         approvalAsset.json as OperatorApprovalData,
@@ -540,7 +580,7 @@ export class PresidentOfficeR2Lab extends Component {
 
       this.assetsReady = true;
       this.switchRoom(this.config.defaultRoom);
-      this.gateLabel.string = `${APPROVED_OPERATOR_ATLAS_CONTRACT.approvalStatus} V2.1 · 128 cell / 8 dir / 12 frame / 18fps / 2× · ${THREE_D_GATE}`;
+      this.gateLabel.string = `A ${APPROVED_OPERATOR_ATLAS_CONTRACT.approvalStatus} V2.1 · 8×12 / 18fps / 1× · B WAITING_Q_BRIDGE_AND_USER_APPROVAL`;
     } catch (error) {
       console.error('[PresidentOfficeR2Lab] load failed', error);
       this.publishQaState({ ready: false, roomId: null, gate: ART_GATE, threeDGate: THREE_D_GATE, viewport: [VIEWPORT_WIDTH, VIEWPORT_HEIGHT], cameraMode: 'follow', error: String(error) });
@@ -552,6 +592,7 @@ export class PresidentOfficeR2Lab extends Component {
   private validateRuntimeGate(
     graph: { rooms?: Record<string, unknown> },
     contract: OperatorContractData,
+    dualContract: DualVersionContractData,
     spec: OperatorSpecData,
     anchors: OperatorAnchorsData,
     approval: OperatorApprovalData,
@@ -579,12 +620,41 @@ export class PresidentOfficeR2Lab extends Component {
       throw new Error('operator JSON contract does not match the approved atlas runtime specification');
     }
     if (
+      dualContract.status !== 'SCENE_DUAL_VERSION_NOT_READY'
+      || dualContract.switchKey !== 'V'
+      || dualContract.shared?.collisionShape !== 'foot_circle'
+      || dualContract.shared.collisionRadius !== this.config.probeRadius
+      || dualContract.shared.mixedLayersAllowed !== false
+      || JSON.stringify(dualContract.shared.directionOrder) !== JSON.stringify(expectedDirections)
+      || dualContract.versions?.A_ART?.status !== ART_GATE
+      || dualContract.versions.A_ART.assetPath !== APPROVED_OPERATOR_ATLAS_CONTRACT.assetPath
+      || dualContract.versions.A_ART.framesPerDirection !== APPROVED_OPERATOR_ATLAS_CONTRACT.framesPerDirection
+      || dualContract.versions.A_ART.runtimeScale !== 1
+      || dualContract.versions.A_ART.containsForearmsHandsRifle !== false
+      || dualContract.versions?.B_Q_BRIDGE?.status !== 'WAITING_Q_BRIDGE_PIPELINE_CANDIDATE_READY_AND_USER_APPROVED_Q_MASTER'
+      || dualContract.versions.B_Q_BRIDGE.assetPath !== null
+      || dualContract.versions.B_Q_BRIDGE.specPath !== null
+      || dualContract.versions.B_Q_BRIDGE.approvalManifestPath !== null
+      || dualContract.versions.B_Q_BRIDGE.framesPerDirection !== null
+      || dualContract.versions.B_Q_BRIDGE.containsCompleteBodyArmsHandsRifle !== true
+      || dualContract.versions.B_Q_BRIDGE.prerequisites?.qBridgePipelineCandidateReady !== false
+      || dualContract.versions.B_Q_BRIDGE.prerequisites.userApprovedQMaster !== false
+      || dualContract.runtimeRestrictions?.aAndBShareFrames !== false
+      || dualContract.runtimeRestrictions.aAndBShareLayers !== false
+      || dualContract.runtimeRestrictions.bMayMasqueradeAsArtApproved !== false
+      || dualContract.runtimeRestrictions.singleDirection3DProofAllowed !== false
+      || dualContract.runtimeRestrictions.threeD128ProofAllowed !== false
+      || dualContract.runtimeRestrictions.rawThreeDDirectDownsampleAllowed !== false
+    ) {
+      throw new Error('dual-version gate must keep A active and B locked until Q Bridge is ready and the user approves the Q master');
+    }
+    if (
       JSON.stringify(spec.cell) !== JSON.stringify(expectedCell)
       || JSON.stringify(spec.directions) !== JSON.stringify(expectedDirections)
       || spec.framesPerDirection !== APPROVED_OPERATOR_ATLAS_CONTRACT.framesPerDirection
       || spec.fps !== APPROVED_OPERATOR_ATLAS_CONTRACT.fps
       || JSON.stringify(spec.footPoint) !== JSON.stringify(expectedFoot)
-      || spec.characterPreviewScale !== APPROVED_OPERATOR_ATLAS_CONTRACT.runtimeScale
+      || spec.characterPreviewScale !== APPROVED_OPERATOR_ATLAS_CONTRACT.sourcePreviewScale
       || spec.movementPixelSnap !== true
       || spec.bodySplit !== false
     ) {
@@ -698,6 +768,11 @@ export class PresidentOfficeR2Lab extends Component {
       pixelSnap: APPROVED_OPERATOR_ATLAS_CONTRACT.pixelSnap,
       preserveWalkFrameOnDirectionChange: APPROVED_OPERATOR_ATLAS_CONTRACT.preserveWalkFrameOnDirectionChange,
       renderPosition: [Math.round(this.operatorNode.position.x), Math.round(this.operatorNode.position.y)],
+      operatorMode: 'A_ART',
+      dualVersionGate: this.dualContract?.status ?? 'SCENE_DUAL_VERSION_NOT_READY',
+      bVersionStatus: this.dualContract?.versions?.B_Q_BRIDGE?.status ?? 'WAITING_Q_BRIDGE_PIPELINE_CANDIDATE_READY_AND_USER_APPROVED_Q_MASTER',
+      collisionShape: 'foot_circle',
+      collisionRadius: this.config?.probeRadius,
     });
   }
 
@@ -724,6 +799,11 @@ export class PresidentOfficeR2Lab extends Component {
     pixelSnap?: boolean;
     preserveWalkFrameOnDirectionChange?: boolean;
     renderPosition?: [number, number];
+    operatorMode?: 'A_ART';
+    dualVersionGate?: string;
+    bVersionStatus?: string;
+    collisionShape?: 'foot_circle';
+    collisionRadius?: number;
     error?: string;
   }): void {
     (globalThis as unknown as { __PRESIDENT_OFFICE_R2_QA__?: typeof state }).__PRESIDENT_OFFICE_R2_QA__ = state;

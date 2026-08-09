@@ -1,0 +1,53 @@
+{
+  "status": "SCENE_DUAL_VERSION_NOT_READY",
+  "switchKey": "V",
+  "shared": {
+    "directionOrder": ["Down", "DownRight", "Right", "UpRight", "Up", "UpLeft", "Left", "DownLeft"],
+    "targetVisibleHeight": [88, 96],
+    "filter": "nearest",
+    "pixelSnap": true,
+    "collisionShape": "foot_circle",
+    "collisionRadius": 16,
+    "mixedLayersAllowed": false
+  },
+  "versions": {
+    "A_ART": {
+      "status": "ART_APPROVED",
+      "label": "A 美术版 · V2.1 肘部身体核心",
+      "assetPath": "weilong_v2_1/weilong_body_core_run_8dir_12f_v2_1",
+      "framesPerDirection": 12,
+      "fps": 18,
+      "cell": [128, 128],
+      "footPoint": [64, 116],
+      "runtimeScale": 1,
+      "containsForearmsHandsRifle": false
+    },
+    "B_Q_BRIDGE": {
+      "status": "WAITING_Q_BRIDGE_PIPELINE_CANDIDATE_READY_AND_USER_APPROVED_Q_MASTER",
+      "label": "B Q版3D转2D · 等待管线候选与用户批准母版",
+      "classification": "q_bridge_output_only_after_user_approved_q_master",
+      "assetPath": null,
+      "specPath": null,
+      "approvalManifestPath": null,
+      "framesPerDirection": null,
+      "fps": null,
+      "cell": null,
+      "footPoint": null,
+      "runtimeScale": null,
+      "medianVisibleHeightRange": [88, 96],
+      "containsCompleteBodyArmsHandsRifle": true,
+      "prerequisites": {
+        "qBridgePipelineCandidateReady": false,
+        "userApprovedQMaster": false
+      }
+    }
+  },
+  "runtimeRestrictions": {
+    "aAndBShareFrames": false,
+    "aAndBShareLayers": false,
+    "bMayMasqueradeAsArtApproved": false,
+    "singleDirection3DProofAllowed": false,
+    "threeD128ProofAllowed": false,
+    "rawThreeDDirectDownsampleAllowed": false
+  }
+}

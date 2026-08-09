@@ -2,10 +2,11 @@
 
 这是 Cocos Creator 3.8.8 的总裁室 R2 六房可运行场景。每个房间是独立小地图，960×540 跟随视窗只显示当前房间局部；正式接入 `ART_APPROVED` 威龙 V2.1 肘部身体核心，可在场景内八方向连续移动、切房并与门和障碍碰撞。
 
-- 场景集成：`SCENE_INTEGRATION_READY`（浏览器验收：`SCENE_INTEGRATION_QA_PASS`）
+- A 版场景验收：`A_SCALE1_SCENE_QA_PASS_B_Q_BRIDGE_LOCKED`
+- 双版本闸门：`SCENE_DUAL_VERSION_NOT_READY`
 - 场景版本：`President Office R2 / six-room`
 - 像素角色：`ART_APPROVED / Weilong V2.1 elbow body core`
-- 3D 分支：`3D_APPROVED_TECH_PROOF_ONLY`；当前不加载、不混入像素主角色
+- 第二版本：等待 `Q_BRIDGE_PIPELINE_CANDIDATE_READY` 与用户批准 Q 版母版；当前不加载、不混入 A 版
 
 ## 正式运行资源
 
@@ -13,13 +14,14 @@
 - 房间拓扑：`assets/resources/president_office_r2/data/president_office_room_graph_r2.json`
 - 房门、出生点、边界与障碍碰撞：`assets/resources/president_office_r2/data/president_office_rooms_r2.json`
 - 角色运行时契约：`assets/resources/president_office_r2/operator_contract/approved_operator_atlas_contract_r1.json`
+- 双版本闸门契约：`assets/resources/president_office_r2/operator_contract/dual_version_runtime_contract_r1.json`
 - 威龙 V2.1 正式运行资源：`assets/resources/weilong_v2_1/`
 - PM 批准与哈希清单：`assets/resources/weilong_v2_1/ART_APPROVAL_MANIFEST.json`
 - Cocos 启动场景：`assets/scenes/PresidentOfficeR2.scene`
 - 六房与角色控制：`assets/scripts/PresidentOfficeR2Lab.ts`
 - 动画时钟契约：`assets/scripts/ApprovedOperatorAtlasContract.ts`
 
-运行时只加载 `weilong_body_core_run_8dir_12f_v2_1.png`、肘部挂点 JSON 和 V2.1 spec。`fullbody_source`、旧候选、拒收资产及 3D 128 proof 均未进入正式资源目录。
+运行时只加载 `weilong_body_core_run_8dir_12f_v2_1.png`、肘部挂点 JSON 和 V2.1 spec。`fullbody_source`、旧候选、拒收资产、3D 128 proof 与原比例 3D 直接降采样均未进入正式资源目录。
 
 碰撞数据由 Blender/视频证据和锁定拓扑独立编辑，运行时不读取 PNG 像素反推碰撞。左侧房门为刷卡门，右侧影院为开放门洞，总裁室外厅下边封闭无门。
 
@@ -51,13 +53,14 @@ COCOS_CREATOR='/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS
 "$COCOS_CREATOR" --project "$(pwd)" --build "configPath=$(pwd)/build-configs/web-desktop.json"
 ```
 
-构建前执行 `npm run verify:runtime-gate`，检查六房资源、角色哈希、图集尺寸、nearest 元数据及禁止资源。构建后执行 `npm run test:smoke`，检查六房切换、八方向动画、转向相位、房门、碰撞以及浏览器零 error/warn。
+构建前执行 `npm run verify:runtime-gate` 与 `npm run test:reachability-data`，检查六房资源、角色哈希、图集尺寸、nearest 元数据、脚底碰撞和禁止资源。构建后执行 `npm run test:smoke` 与 `npm run test:reachability-browser`，检查八方向动画、转向相位、房门、正常门路六房可达性、实际移动范围以及浏览器零 error/warn。
 
 ## 操作
 
 - `WASD` / 方向键：八方向移动威龙。
 - `Shift`：快速移动。
 - `E` / `Space`：交互房门。
+- `V`：查看第二版本闸门；在 Q Bridge 与用户批准 Q 版母版到位前不会切换角色。
 - `K`：仅 QA 使用，授予/移除刷卡门钥匙卡。
 - `C`：显示/隐藏独立碰撞层。
 - `1–6`：QA 直达六个房间。
@@ -68,21 +71,24 @@ COCOS_CREATOR='/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS
 - 方向：`Down, DownRight, Right, UpRight, Up, UpLeft, Left, DownLeft`
 - 图集：128×128 cell，8 行×12 列，12 帧，18fps
 - 脚点：`[64,116]`
-- 显示：2×整数缩放、nearest、pixel-snap
+- 显示：1×整数缩放、nearest、pixel-snap；可见角色高度约 86–92px
 - 变向：保留当前 `walkFrame`，不重置相位
 - 内容：本轮只显示肘部身体核心；攻击手臂、手、枪、攻击和换弹尚未接入
 
 ## QA 证据
 
 - 浏览器完整结果：`artifacts/president_office_r2/smoke-result.json`
+- 六房数据可达性：`artifacts/president_office_r2/reachability-data-audit.json`
+- 正常门路实跑轨迹：`artifacts/president_office_r2/reachability-browser-result.json`
+- A 版 1×目检：`artifacts/president_office_r2/iab_a_scale1_scene.png`
+- Q Bridge 锁定提示：`artifacts/president_office_r2/iab_q_bridge_gate_locked.png`
 - 八方向截图：`artifacts/president_office_r2/operator_8dir/`
-- 八方向 GIF：`artifacts/president_office_r2/weilong_v2_1_8dir_qa.gif`
 - Cocos 构建日志：`artifacts/president_office_r2/cocos-web-desktop-build-2026-08-09.log`
 - 详细说明：`docs/SCENE_INTEGRATION_V2_1_QA.md`
 
 ## 禁止运行时素材
 
-威龙 Prototype 1、威龙 test02、威龙 V1/V2 候选、露娜 Prototype 4/5、`fullbody_source` 和 3D 128 proof 不得位于正式运行资源目录或被场景加载。历史技术诊断件仅在 `bad_cases_失败案例/` 隔离保留。
+威龙 Prototype 1、威龙 test02、威龙 V1/V2 候选、露娜 Prototype 4/5、`fullbody_source`、3D 128 proof 和原比例 3D 直接降采样不得位于正式运行资源目录或被场景加载。第二版本只有在 `Q_BRIDGE_PIPELINE_CANDIDATE_READY` 和用户批准 Q 版母版两项同时满足后才可另行接入。
 
 失败案例包括用户要求保留的威龙 Prototype 1、露娜 Prototype 4/5，以及写实 PBR 直缩、共享变形笼 Q 化、五关键姿势＋正弦摆腿和上下半身分层合成四组威龙反例。所有条目均标记为 `REJECTED_BAD_CASE`、`forensic review only`，禁止游戏、生图、img2img、训练与迭代基线用途；详见 `bad_cases_失败案例/README.md` 和 `bad_cases_失败案例/registry.json`。
 

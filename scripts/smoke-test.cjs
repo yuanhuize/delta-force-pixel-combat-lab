@@ -91,6 +91,21 @@ const qaState = () => page.evaluate(() => globalThis.__PRESIDENT_OFFICE_R2_QA__ 
   await canvasLocator.click({ position: { x: 640, y: 360 } });
   await page.evaluate(() => document.querySelector('canvas')?.focus());
 
+  let initialState = await qaState();
+  if (
+    initialState.operatorMode !== 'A_ART'
+    || initialState.dualVersionGate !== 'SCENE_DUAL_VERSION_NOT_READY'
+    || initialState.bVersionStatus !== 'WAITING_Q_BRIDGE_PIPELINE_CANDIDATE_READY_AND_USER_APPROVED_Q_MASTER'
+  ) {
+    throw new Error(`Q Bridge gate mismatch: ${JSON.stringify(initialState)}`);
+  }
+  await page.keyboard.press('v');
+  await page.waitForTimeout(80);
+  initialState = await qaState();
+  if (initialState.operatorMode !== 'A_ART') {
+    throw new Error(`V entered an unapproved B mode: ${JSON.stringify(initialState)}`);
+  }
+
   const waitForRoom = async (roomId, timeout = 5000) => {
     await page.waitForFunction(expected => globalThis.__PRESIDENT_OFFICE_R2_QA__?.roomId === expected, roomId, { timeout });
   };
@@ -131,7 +146,7 @@ const qaState = () => page.evaluate(() => globalThis.__PRESIDENT_OFFICE_R2_QA__ 
       JSON.stringify(state.cell) !== JSON.stringify([128, 128])
       || JSON.stringify(state.footAnchor) !== JSON.stringify([64, 116])
       || state.fps !== 18
-      || state.runtimeScale !== 2
+      || state.runtimeScale !== 1
       || state.pixelSnap !== true
       || state.preserveWalkFrameOnDirectionChange !== true
       || !state.renderPosition.every(Number.isInteger)
@@ -237,7 +252,7 @@ const qaState = () => page.evaluate(() => globalThis.__PRESIDENT_OFFICE_R2_QA__ 
   const canvas = await page.locator('canvas').boundingBox();
   const result = {
     ok: errors.length === 0 && warnings.length === 0,
-    status: 'SCENE_INTEGRATION_QA_PASS',
+    status: 'A_SCALE1_SCENE_QA_PASS_B_Q_BRIDGE_LOCKED',
     url: 'http://127.0.0.1:8468',
     canvas,
     visited,
@@ -258,7 +273,7 @@ const qaState = () => page.evaluate(() => globalThis.__PRESIDENT_OFFICE_R2_QA__ 
   console.error(error);
   const failure = {
     ok: false,
-    status: 'SCENE_INTEGRATION_QA_FAILED',
+    status: 'A_SCALE1_SCENE_QA_FAILED_B_Q_BRIDGE_LOCKED',
     error: error.message,
     errors,
     warnings,

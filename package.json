@@ -5,6 +5,8 @@
   "description": "Cocos Creator 3.8.8 six-room President Office R2 lab with the ART_APPROVED Weilong V2.1 operator.",
   "scripts": {
     "verify:runtime-gate": "node scripts/verify-runtime-gate.cjs",
+    "test:reachability-data": "node scripts/audit-reachability.cjs",
+    "test:reachability-browser": "node scripts/smoke-reachability.cjs",
     "test:smoke": "node scripts/smoke-test.cjs",
     "release:package": "bash scripts/package-release.sh"
   },
