@@ -18,7 +18,8 @@
 2. 确认工作区只包含本次版本需要的源码、资源和文档变更。
 3. 更新 `package.json` 的 `version`，并把 `CHANGELOG.md` 中 `[Unreleased]` 的内容归入对应版本和发布日期。
 4. 确认 tag 名与版本严格对应：`package.json` 为 `0.1.1` 时，tag 必须为 `v0.1.1`。
-5. 使用项目内的 `build-configs/web-desktop.json` 重新构建，不复用旧版本产物。
+5. 执行 `npm run verify:runtime-gate`，确认六房、碰撞、角色哈希、nearest 元数据、禁止资源和独立 3D 闸门全部通过。
+6. 使用项目内的 `build-configs/web-desktop.json` 重新构建，不复用旧版本产物。
 
 ## 构建 Web Desktop 版本
 
@@ -36,13 +37,13 @@ test -f build/web-desktop/index.html
 test -f build/web-desktop/src/settings.json
 ```
 
-可用 `./run-lab.command` 在本机浏览器中检查操作、方向切换、攻击、换弹和资源加载。如果本机已安装 Playwright 及 Google Chrome，也可执行：
+可用 `./run-lab.command` 在本机浏览器中检查六房局部跟随视窗、威龙八方向移动、房门和碰撞层。首次测试先执行 `npm install`，再执行：
 
 ```bash
 node scripts/smoke-test.cjs
 ```
 
-烟雾测试必须正常退出，且控制台输出中的 `errors` 应为空数组。
+烟雾测试必须验证六房逐一到达、八方向映射、12 帧/18fps 动画、转向保持 `walkFrame`、2×整数缩放与 pixel-snap、左刷卡门锁定/解锁、右影院开放门洞、主厅—外厅中央门往返和外厅边界阻挡。测试结果必须显示 `SCENE_INTEGRATION_QA_PASS`、`ART_APPROVED`、`3D_APPROVED_TECH_PROOF_ONLY`，且 `errors`、`warnings` 均为空数组。
 
 ## 生成 Release 附件
 

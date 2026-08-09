@@ -1,81 +1,89 @@
 # 三角洲行动像素战斗试验台 / Delta Force Pixel Combat Lab
 
-## 项目说明 / Project Overview
+这是 Cocos Creator 3.8.8 的总裁室 R2 六房可运行场景。每个房间是独立小地图，960×540 跟随视窗只显示当前房间局部；正式接入 `ART_APPROVED` 威龙 V2.1 肘部身体核心，可在场景内八方向连续移动、切房并与门和障碍碰撞。
 
-这是一个基于 Cocos Creator 3.8.8 制作的非正式像素战斗原型，用于验证角色八方向移动、快速转向、身体与武器分层、瞄准、开火、换弹及前后遮挡关系。本项目目前是技术与美术流程试验台，不是完整游戏，也不代表正式角色美术质量。
+- 场景集成：`SCENE_INTEGRATION_READY`（浏览器验收：`SCENE_INTEGRATION_QA_PASS`）
+- 场景版本：`President Office R2 / six-room`
+- 像素角色：`ART_APPROVED / Weilong V2.1 elbow body core`
+- 3D 分支：`3D_APPROVED_TECH_PROOF_ONLY`；当前不加载、不混入像素主角色
 
-This is an unofficial Cocos Creator 3.8.8 pixel-combat prototype for validating eight-direction movement, character/weapon layering, aiming, firing, reloading, and front/back rendering order. It is a technical and art-pipeline lab rather than a complete game or final-art showcase.
+## 正式运行资源
 
-- 项目中文名：`三角洲行动像素战斗试验台`
-- Project name: `Delta Force Pixel Combat Lab`
-- 当前版本 / Version: `0.1.0`
-- 引擎 / Engine: `Cocos Creator 3.8.8`
-- 当前运行角色 / Runtime character: `露娜 Prototype 3 / Luna Prototype 3`
-- GitHub 仓库 / Repository: `delta-force-pixel-combat-lab（三角洲行动像素战斗试验台）`
+- 六张 R2 分房背景：`assets/resources/president_office_r2/rooms/`
+- 房间拓扑：`assets/resources/president_office_r2/data/president_office_room_graph_r2.json`
+- 房门、出生点、边界与障碍碰撞：`assets/resources/president_office_r2/data/president_office_rooms_r2.json`
+- 角色运行时契约：`assets/resources/president_office_r2/operator_contract/approved_operator_atlas_contract_r1.json`
+- 威龙 V2.1 正式运行资源：`assets/resources/weilong_v2_1/`
+- PM 批准与哈希清单：`assets/resources/weilong_v2_1/ART_APPROVAL_MANIFEST.json`
+- Cocos 启动场景：`assets/scenes/PresidentOfficeR2.scene`
+- 六房与角色控制：`assets/scripts/PresidentOfficeR2Lab.ts`
+- 动画时钟契约：`assets/scripts/ApprovedOperatorAtlasContract.ts`
 
-## GitHub 上传根目录 / Repository Root
+运行时只加载 `weilong_body_core_run_8dir_12f_v2_1.png`、肘部挂点 JSON 和 V2.1 spec。`fullbody_source`、旧候选、拒收资产及 3D 128 proof 均未进入正式资源目录。
 
-GitHub Desktop 应添加和上传以下目录：
+碰撞数据由 Blender/视频证据和锁定拓扑独立编辑，运行时不读取 PNG 像素反推碰撞。左侧房门为刷卡门，右侧影院为开放门洞，总裁室外厅下边封闭无门。
 
-`combat_lab（战斗试验台项目 / Combat Lab Project）`
+## 项目与上传目录（English / 中文）
 
-不要把上一级“三角洲行动-像素版”工作区整体作为仓库上传。上一级目录包含其他实验工程、生成缓存和大型源素材，不属于本仓库版本范围。
+GitHub 仓库根目录就是 `combat_lab/`（Combat Lab / 战斗试验台项目），不要上传它外侧的 `art_demos/`、本地缓存或大型 Blender 源文件。
 
-## 文件夹说明 / Folder Guide
+| 文件夹 | 中文名称 | 用途与上传规则 |
+| --- | --- | --- |
+| `assets/` | Cocos 正式资源与源码 | 上传；只允许场景实际使用的批准资源、场景和 TypeScript 脚本 |
+| `assets/resources/president_office_r2/` | 总裁室 R2 六房资源 | 上传；地图、房间拓扑、门、碰撞和角色契约 |
+| `assets/resources/weilong_v2_1/` | 威龙 V2.1 正式运行资源 | 上传；仅 `ART_APPROVED` 身体核心、肘点、spec 和批准清单 |
+| `bad_cases_失败案例/` | Bad Cases / 失败案例档案 | 上传；与运行时隔离，只供人工取证复盘 |
+| `docs/` | Documentation / 项目与 QA 文档 | 上传；场景验收、资源哈希和已知限制 |
+| `scripts/` | Build & QA Scripts / 构建与质检脚本 | 上传；运行时闸门、浏览器 smoke 和发布打包 |
+| `build-configs/` | Build Configurations / 构建配置 | 上传；Web Desktop 构建入口 |
+| `build/` | Local Build / 本地构建产物 | 不提交源码仓；由 Cocos 重新生成 |
+| `release/` | Release Attachments / 发布附件 | 不提交源码仓；ZIP 与 `.sha256` 上传到 GitHub Release |
+| `library/`、`temp/`、`profiles/`、`artifacts/` | Cache & QA Output / 缓存与本地 QA 输出 | 不提交；均可由源码和脚本重建 |
 
-| 实际文件夹 / Folder | 中文名称 | English Name | GitHub 处理方式 | 用途 |
-| --- | --- | --- | --- | --- |
-| `.creator/` | Creator 项目元数据 | Creator Project Metadata | 上传 | Cocos Creator 项目识别信息 |
-| `assets/` | 游戏运行资源 | Runtime Game Assets | 上传 | 场景、TypeScript 脚本和当前可运行像素资源 |
-| `build-configs/` | 构建配置 | Build Configurations | 上传 | Web Desktop 可复现构建参数 |
-| `build-templates/` | 构建页面模板 | Build Templates | 上传 | Web 构建使用的 HTML/CSS 模板 |
-| `scripts/` | 工具与发布脚本 | Tooling and Release Scripts | 上传 | 烟雾测试和版本打包 |
-| `settings/` | 项目设置 | Project Settings | 上传 | Cocos Creator 项目配置 |
-| `bad_cases_失败案例/` | 生成失败案例档案 | Generated Bad Case Archive | 上传 | 威龙 V1、露娜 V4/V5 的完整生成过程与失败复盘资料 |
-| `build/` | 本地构建输出 | Local Build Output | 不提交 | 本机生成，可打包后作为 GitHub Release 附件 |
-| `library/`、`temp/`、`profiles/` | 编辑器缓存 | Editor Cache | 不提交 | Cocos Creator 自动生成，可重新创建 |
-| `artifacts/` | 测试截图 | Test Artifacts | 不提交 | 本地烟雾测试输出 |
-| `release/` | 发布附件 | Release Packages | 不提交源码 | ZIP 和 SHA-256 文件上传到 GitHub Releases |
+## 打开与运行
 
-Cocos Creator 要求的标准目录保持英文名称；中文名称和英文含义在上表中同时注明。可自由命名的失败案例目录采用双语实体名称 `bad_cases_失败案例/`。
-
-## 打开与运行 / Open and Run
-
-1. 用 Cocos Creator 3.8.8 打开 `combat_lab（战斗试验台项目）`。
-2. 打开 `assets/scenes/RigLab.scene`。
-3. 点击编辑器顶部的预览按钮。
-
-也可以在项目根目录执行命令行构建：
+1. 用 Cocos Creator 3.8.8 打开 `combat_lab`。
+2. 打开 `assets/scenes/PresidentOfficeR2.scene`。
+3. 点击预览，或使用 `build-configs/web-desktop.json` 构建 Web Desktop。
 
 ```bash
 COCOS_CREATOR='/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS/CocosCreator'
 "$COCOS_CREATOR" --project "$(pwd)" --build "configPath=$(pwd)/build-configs/web-desktop.json"
 ```
 
-## 当前素材状态 / Asset Status
+构建前执行 `npm run verify:runtime-gate`，检查六房资源、角色哈希、图集尺寸、nearest 元数据及禁止资源。构建后执行 `npm run test:smoke`，检查六房切换、八方向动画、转向相位、房门、碰撞以及浏览器零 error/warn。
 
-- 当前运行脚本已回退到露娜 Prototype 3，仅维持技术诊断，不是正式人物美术。
-- 突击步枪包含八方向瞄准、开火和恢复三相位，武器、双手、弹匣及枪口分别成层。
-- 换弹包含八方向、七帧分层动作。
-- Prototype 3 使用完整身体四帧闭环跑动，并按走路帧同步双前臂和手掌图层。
-- 威龙 Prototype 1 与露娜 Prototype 4/5 已标记为 `REJECTED_BAD_CASE`，完整过程保存在 `bad_cases_失败案例/`，不会被 Cocos 运行时加载。
-- 失败案例的允许和禁止用途见 `bad_cases_失败案例/README.md`，机器可读登记见 `bad_cases_失败案例/registry.json`。
+## 操作
 
-## 操作 / Controls
+- `WASD` / 方向键：八方向移动威龙。
+- `Shift`：快速移动。
+- `E` / `Space`：交互房门。
+- `K`：仅 QA 使用，授予/移除刷卡门钥匙卡。
+- `C`：显示/隐藏独立碰撞层。
+- `1–6`：QA 直达六个房间。
+- `R`：回到当前房间出生点。
 
-- `WASD` / 方向键：八方向移动。
-- 鼠标移动：更新瞄准方向。
-- `Q`：切换“移动方向决定朝向”与“鼠标决定朝向”。
-- `0`：纯身体跑动；`1`：弓；`2`：突击步枪。
-- 鼠标左键 / `Space`：攻击。
-- `R`：步枪换弹。
-- `T`：自动环绕检查八方向切换。
+## 角色运行契约
 
-## 当前限制 / Current Limitations
+- 方向：`Down, DownRight, Right, UpRight, Up, UpLeft, Left, DownLeft`
+- 图集：128×128 cell，8 行×12 列，12 帧，18fps
+- 脚点：`[64,116]`
+- 显示：2×整数缩放、nearest、pixel-snap
+- 变向：保留当前 `walkFrame`，不重置相位
+- 内容：本轮只显示肘部身体核心；攻击手臂、手、枪、攻击和换弹尚未接入
 
-- 不使用骨骼拉伸、IK 或网格变形，避免精细像素图出现长度变化和模糊。
-- 临时跑动帧不作为最终美术验收；当前阶段主要检查方向切换、尺寸、脚点和图层。
-- 上下方向的枪身透视由美术帧直接表现，运行时不缩放枪身。
-- 新素材必须遵守 `assets/resources/luna/luna_rifle_run_v3_spec.json` 的方向顺序、手臂列索引和图层规格。
+## QA 证据
 
-完整版本发布步骤见 `RELEASE.md`，版本变更记录见 `CHANGELOG.md`。
+- 浏览器完整结果：`artifacts/president_office_r2/smoke-result.json`
+- 八方向截图：`artifacts/president_office_r2/operator_8dir/`
+- 八方向 GIF：`artifacts/president_office_r2/weilong_v2_1_8dir_qa.gif`
+- Cocos 构建日志：`artifacts/president_office_r2/cocos-web-desktop-build-2026-08-09.log`
+- 详细说明：`docs/SCENE_INTEGRATION_V2_1_QA.md`
+
+## 禁止运行时素材
+
+威龙 Prototype 1、威龙 test02、威龙 V1/V2 候选、露娜 Prototype 4/5、`fullbody_source` 和 3D 128 proof 不得位于正式运行资源目录或被场景加载。历史技术诊断件仅在 `bad_cases_失败案例/` 隔离保留。
+
+失败案例包括用户要求保留的威龙 Prototype 1、露娜 Prototype 4/5，以及写实 PBR 直缩、共享变形笼 Q 化、五关键姿势＋正弦摆腿和上下半身分层合成四组威龙反例。所有条目均标记为 `REJECTED_BAD_CASE`、`forensic review only`，禁止游戏、生图、img2img、训练与迭代基线用途；详见 `bad_cases_失败案例/README.md` 和 `bad_cases_失败案例/registry.json`。
+
+版本说明见 `CHANGELOG.md`，构建、校验和与 GitHub 发布流程见 `RELEASE.md`。

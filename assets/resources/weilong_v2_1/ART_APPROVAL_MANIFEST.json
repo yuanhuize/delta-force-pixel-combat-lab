@@ -1,0 +1,42 @@
+{
+  "status": "ART_APPROVED",
+  "approvedVersion": "V2.1",
+  "approvedDate": "2026-08-09",
+  "sourceApprovalManifest": "/Users/yuanhuize/codex work/三角洲行动-像素版/art_demos/weilong_elbow_core_run_v2_1/ART_APPROVED_V2_1.md",
+  "runtimeAssets": {
+    "atlas": {
+      "path": "weilong_v2_1/weilong_body_core_run_8dir_12f_v2_1",
+      "file": "weilong_body_core_run_8dir_12f_v2_1.png",
+      "sha256": "aeed19fe787a7355f4a362fb9d1fb556702a9692562950fc0991c3d64bd7de0b"
+    },
+    "anchors": {
+      "path": "weilong_v2_1/weilong_elbow_anchors_8dir_12f_v2_1",
+      "file": "weilong_elbow_anchors_8dir_12f_v2_1.json",
+      "sha256": "9a59fa24f0c32da775416eafe57fcf4bc0dfa344b607923c8cca644ad598416d"
+    },
+    "spec": {
+      "path": "weilong_v2_1/spec_v2_1",
+      "file": "spec_v2_1.json",
+      "sha256": "14ced3c8c6259fc7905d1f1bd0efdc40ca14bc1478c732ddeba5ac67a7785fd8"
+    }
+  },
+  "runtimeContract": {
+    "cell": [128, 128],
+    "directions": ["Down", "DownRight", "Right", "UpRight", "Up", "UpLeft", "Left", "DownLeft"],
+    "framesPerDirection": 12,
+    "fps": 18,
+    "footPoint": [64, 116],
+    "runtimeScale": 2,
+    "filter": "nearest",
+    "pixelSnap": true,
+    "preserveWalkFrameOnDirectionChange": true
+  },
+  "restrictions": {
+    "runtimeBody": "elbow_body_core_only",
+    "fullbodySourceRuntimeAllowed": false,
+    "attackArmsHandsWeaponsIncluded": false,
+    "candidateOrRejectedAssetsAllowed": false,
+    "threeD128ProofAllowed": false,
+    "approvedPixelsFrozen": true
+  }
+}

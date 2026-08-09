@@ -1,0 +1,129 @@
+{
+  "version": "r2_cocos_scene_prep_1",
+  "coordinateSystem": "image pixels, origin at top-left, y grows downward",
+  "collisionSource": "Authored from Blender obstacle evidence and frozen room topology; collision is independent data and is never sampled from PNG pixels.",
+  "defaultRoom": "outside_hall",
+  "probeRadius": 16,
+  "rooms": {
+    "outside_hall": {
+      "displayName": "总裁室外厅",
+      "asset": "president_office_r2/rooms/room_outside_hall_r2",
+      "assetSize": [1671, 941],
+      "playableBounds": [42, 52, 1587, 835],
+      "spawn": [160, 470],
+      "doors": [
+        {"id": "D1", "kind": "open", "rect": [35, 370, 90, 170], "target": "west_entry_corridor", "targetSpawn": [836, 200], "label": "西侧入口走廊"},
+        {"id": "D2", "kind": "open", "rect": [1545, 370, 90, 170], "target": "east_entry_corridor", "targetSpawn": [836, 200], "label": "东侧入口走廊"},
+        {"id": "D3", "kind": "open", "rect": [760, 35, 151, 125], "target": "main_hall", "targetSpawn": [836, 820], "label": "总裁室主厅中央普通门"}
+      ],
+      "colliders": [
+        {"id": "outside_lounge_nw", "rect": [250, 70, 330, 190], "height": "high"},
+        {"id": "outside_lounge_ne", "rect": [1135, 70, 330, 190], "height": "high"},
+        {"id": "outside_crates_n", "rect": [760, 160, 180, 150], "height": "high"},
+        {"id": "outside_crates_w", "rect": [330, 285, 155, 145], "height": "high"},
+        {"id": "outside_crates_center", "rect": [650, 345, 270, 170], "height": "high"},
+        {"id": "outside_crates_e", "rect": [1375, 255, 165, 205], "height": "high"},
+        {"id": "outside_sofa_center_e", "rect": [1050, 310, 220, 115], "height": "half"},
+        {"id": "outside_crates_sw", "rect": [430, 450, 190, 160], "height": "high"},
+        {"id": "outside_crates_se", "rect": [1190, 420, 160, 145], "height": "high"},
+        {"id": "outside_crates_s", "rect": [650, 590, 90, 145], "height": "high"},
+        {"id": "outside_lounge_sw", "rect": [250, 680, 350, 175], "height": "half"},
+        {"id": "outside_lounge_se", "rect": [1080, 680, 350, 175], "height": "half"}
+      ]
+    },
+    "main_hall": {
+      "displayName": "总裁室主厅",
+      "asset": "president_office_r2/rooms/room_main_hall_r2",
+      "assetSize": [1672, 941],
+      "playableBounds": [25, 20, 1622, 885],
+      "spawn": [836, 820],
+      "doors": [
+        {"id": "D3_BACK", "kind": "open", "rect": [750, 805, 172, 125], "target": "outside_hall", "targetSpawn": [720, 180], "label": "返回总裁室外厅"},
+        {"id": "D4", "kind": "keycard_locked", "requiredItem": "keycard_boss", "rect": [25, 390, 130, 190], "target": "left_keycard_room", "targetSpawn": [1240, 640], "label": "左侧刷卡金库房"},
+        {"id": "O1", "kind": "open", "rect": [1510, 545, 145, 200], "target": "right_cinema", "targetSpawn": [450, 500], "label": "右侧私人影院开放门洞"}
+      ],
+      "colliders": [
+        {"id": "main_bamboo_nw", "rect": [260, 55, 460, 130], "height": "high"},
+        {"id": "main_sofa_w", "rect": [290, 250, 315, 150], "height": "half"},
+        {"id": "main_table_w", "rect": [495, 335, 150, 95], "height": "low"},
+        {"id": "main_sofa_n", "rect": [720, 45, 405, 175], "height": "half"},
+        {"id": "main_desk_ne", "rect": [1020, 135, 305, 185], "height": "half"},
+        {"id": "main_sculpture", "rect": [785, 310, 180, 205], "height": "high"},
+        {"id": "main_lounge_e", "rect": [1175, 330, 285, 190], "height": "half"},
+        {"id": "main_crate_nw", "rect": [650, 180, 90, 95], "height": "high"},
+        {"id": "main_crate_w", "rect": [490, 540, 125, 115], "height": "high"},
+        {"id": "main_server_center", "rect": [740, 455, 95, 140], "height": "high"},
+        {"id": "main_crate_e", "rect": [980, 525, 130, 120], "height": "high"},
+        {"id": "main_crate_se", "rect": [1200, 545, 175, 145], "height": "high"}
+      ]
+    },
+    "left_keycard_room": {
+      "displayName": "左侧刷卡金库房",
+      "asset": "president_office_r2/rooms/room_left_keycard_r2",
+      "assetSize": [1672, 941],
+      "playableBounds": [285, 20, 1130, 845],
+      "spawn": [1240, 640],
+      "doors": [
+        {"id": "D4_BACK", "kind": "keycard_locked", "requiredItem": "keycard_boss", "rect": [1240, 515, 175, 250], "target": "main_hall", "targetSpawn": [180, 485], "label": "返回总裁室主厅"}
+      ],
+      "colliders": [
+        {"id": "keycard_safe_wall_w", "rect": [290, 150, 185, 590], "height": "high"},
+        {"id": "keycard_safe_wall_e_n", "rect": [1200, 90, 210, 430], "height": "high"},
+        {"id": "keycard_large_safe", "rect": [465, 75, 410, 165], "height": "high"},
+        {"id": "keycard_inspection_table", "rect": [640, 300, 310, 260], "height": "half"},
+        {"id": "keycard_server", "rect": [1110, 555, 105, 160], "height": "high"}
+      ]
+    },
+    "right_cinema": {
+      "displayName": "右侧私人影院",
+      "asset": "president_office_r2/rooms/room_right_cinema_r2",
+      "assetSize": [1672, 941],
+      "playableBounds": [335, 30, 960, 825],
+      "spawn": [450, 500],
+      "doors": [
+        {"id": "O1_BACK", "kind": "open", "rect": [330, 390, 125, 195], "target": "main_hall", "targetSpawn": [1480, 650], "label": "返回总裁室主厅"}
+      ],
+      "colliders": [
+        {"id": "cinema_screen", "rect": [785, 115, 360, 125], "height": "high"},
+        {"id": "cinema_plant_nw", "rect": [675, 165, 95, 120], "height": "high"},
+        {"id": "cinema_plant_ne", "rect": [1135, 190, 95, 125], "height": "high"},
+        {"id": "cinema_seat_row1_w", "rect": [735, 305, 200, 165], "height": "half"},
+        {"id": "cinema_seat_row1_e", "rect": [940, 330, 200, 165], "height": "half"},
+        {"id": "cinema_seat_row2_w", "rect": [580, 485, 205, 175], "height": "half"},
+        {"id": "cinema_seat_row2_e", "rect": [805, 555, 205, 175], "height": "half"}
+      ]
+    },
+    "west_entry_corridor": {
+      "displayName": "西侧入口走廊",
+      "asset": "president_office_r2/rooms/room_west_entry_corridor_r2",
+      "assetSize": [1672, 941],
+      "playableBounds": [440, 25, 790, 870],
+      "spawn": [836, 200],
+      "doors": [
+        {"id": "D1_BACK", "kind": "open", "rect": [750, 20, 172, 125], "target": "outside_hall", "targetSpawn": [145, 470], "label": "进入总裁室外厅"},
+        {"id": "WEST_EXTERNAL", "kind": "external_boundary", "rect": [650, 790, 372, 130], "label": "外部区域（本测试不加载）"}
+      ],
+      "colliders": [
+        {"id": "west_far_equipment", "rect": [775, 70, 145, 90], "height": "high"},
+        {"id": "west_shelving", "rect": [960, 230, 180, 390], "height": "high"},
+        {"id": "west_vending", "rect": [1070, 610, 115, 195], "height": "high"}
+      ]
+    },
+    "east_entry_corridor": {
+      "displayName": "东侧入口走廊",
+      "asset": "president_office_r2/rooms/room_east_entry_corridor_r2",
+      "assetSize": [1672, 941],
+      "playableBounds": [440, 25, 790, 870],
+      "spawn": [836, 200],
+      "doors": [
+        {"id": "D2_BACK", "kind": "open", "rect": [750, 20, 172, 125], "target": "outside_hall", "targetSpawn": [1525, 500], "label": "进入总裁室外厅"},
+        {"id": "EAST_EXTERNAL", "kind": "external_boundary", "rect": [650, 790, 372, 130], "label": "外部区域（本测试不加载）"}
+      ],
+      "colliders": [
+        {"id": "east_far_equipment", "rect": [775, 70, 145, 90], "height": "high"},
+        {"id": "east_shelving", "rect": [532, 230, 180, 390], "height": "high"},
+        {"id": "east_vending", "rect": [487, 610, 115, 195], "height": "high"}
+      ]
+    }
+  }
+}

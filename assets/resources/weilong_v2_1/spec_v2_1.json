@@ -1,0 +1,39 @@
+{
+  "status": "ART_CANDIDATE_READY_V2_1",
+  "cell": [
+    128,
+    128
+  ],
+  "framesPerDirection": 12,
+  "fps": 18,
+  "directions": [
+    "Down",
+    "DownRight",
+    "Right",
+    "UpRight",
+    "Up",
+    "UpLeft",
+    "Left",
+    "DownLeft"
+  ],
+  "footPoint": [
+    64,
+    116
+  ],
+  "characterPreviewScale": 2,
+  "movementPixelSnap": true,
+  "changedDirections": [
+    "UpRight",
+    "UpLeft"
+  ],
+  "frozenDirections": [
+    "Down",
+    "DownRight",
+    "Right",
+    "Up",
+    "Left",
+    "DownLeft"
+  ],
+  "bodySplit": false,
+  "combatLabModified": false
+}

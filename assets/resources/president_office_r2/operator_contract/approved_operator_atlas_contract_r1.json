@@ -1,0 +1,37 @@
+{
+  "status": "ART_APPROVED",
+  "approvedVersion": "V2.1",
+  "assetPath": "weilong_v2_1/weilong_body_core_run_8dir_12f_v2_1",
+  "anchorsPath": "weilong_v2_1/weilong_elbow_anchors_8dir_12f_v2_1",
+  "specPath": "weilong_v2_1/spec_v2_1",
+  "approvalManifestPath": "weilong_v2_1/ART_APPROVAL_MANIFEST",
+  "cellSize": [128, 128],
+  "directionOrder": ["Down", "DownRight", "Right", "UpRight", "Up", "UpLeft", "Left", "DownLeft"],
+  "directionCount": 8,
+  "framesPerDirection": 12,
+  "fps": 18,
+  "layout": "columns=12 frames, rows=8 directions",
+  "preserveWalkFrameOnDirectionChange": true,
+  "resetWalkFrameWhenIdle": false,
+  "footAnchor": [64, 116],
+  "runtimeScale": 2,
+  "filter": "nearest",
+  "pixelSnap": true,
+  "allowedRuntimeScales": [1, 2, 3],
+  "forbiddenRuntimeScales": [1.5],
+  "approvalRequirement": "Satisfied by PM ART_APPROVED on 2026-08-09; approved V2.1 pixels are frozen.",
+  "threeDBranch": {
+    "status": "3D_APPROVED_TECH_PROOF_ONLY",
+    "approvedAssetId": "WL_Tactical_Rifle_Run_V2",
+    "approvedScope": [
+      "full_skeleton_tactical_rifle_run_action",
+      "proxy_and_attachment_point_qa",
+      "3d_to_2d_pipeline_proof"
+    ],
+    "mode": "independent_comparison_only",
+    "runtimeEntry": null,
+    "formalPixelAsset": false,
+    "proof128IsFormalPixelAsset": false,
+    "mixWithPixelAtlas": false
+  }
+}

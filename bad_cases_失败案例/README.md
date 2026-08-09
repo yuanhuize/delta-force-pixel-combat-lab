@@ -8,6 +8,9 @@
 | --- | --- | --- | --- |
 | `weilong_prototype_1/` | `REJECTED_BAD_CASE` | 锁定上半身身份后，独立生成并合成下半身动作 | 生成提示词、八方向生成源、构建脚本、QA 图/GIF、分层运行时输出 |
 | `luna_prototype_4_5/` | `REJECTED_BAD_CASE` | V4 保留上半身并替换下半身；V5 又将上半身身份源与独立下半身动作合成 | V4/V5 生成源、合成脚本、方向动画 QA、规格和曾用运行时资源 |
+| `luna_prototype_3_legacy_diagnostic/` | `REJECTED_BAD_CASE` | 旧运行诊断角色与武器分层已退出正式资源 | 曾用图集、规格和运行脚本 |
+| `weilong_test02_candidate_rejected/` | `REJECTED_BAD_CASE` | 未获批准的 test02 全骨架候选曾残留运行时 | 候选图集、规格和 Cocos 元数据 |
+| `weilong_3d_procedural_and_pixelization_bad_cases_威龙3D程序化与像素化失败案例/` | `REJECTED_BAD_CASE` | 写实/PBR 直缩、共享笼 Q 化、五姿势正弦跑步和上下半身分层四类失败 | 代表 PNG/GIF/JSON、脚本快照、源文件排除清单与哈希 |
 
 详细登记见 `registry.json`。
 

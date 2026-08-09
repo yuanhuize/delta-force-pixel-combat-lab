@@ -1,13 +1,18 @@
 {
-  "name": "luna-rig-combat-lab",
-  "version": "0.1.0",
+  "name": "president-office-r2-combat-lab",
+  "version": "0.2.0",
   "private": true,
-  "description": "A focused Cocos Creator 3.8.8 lab for validating Luna's eight-direction rifle rig.",
+  "description": "Cocos Creator 3.8.8 six-room President Office R2 lab with the ART_APPROVED Weilong V2.1 operator.",
   "scripts": {
+    "verify:runtime-gate": "node scripts/verify-runtime-gate.cjs",
+    "test:smoke": "node scripts/smoke-test.cjs",
     "release:package": "bash scripts/package-release.sh"
   },
   "engines": {
     "cocos-creator": "3.8.8"
+  },
+  "devDependencies": {
+    "playwright": "1.62.0"
   },
   "creator": {
     "version": "3.8.8"

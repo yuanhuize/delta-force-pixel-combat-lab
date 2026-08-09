@@ -1,0 +1,70 @@
+{
+  "version": "r2_video_blender_evidence",
+  "orientation": "inside_top_outside_bottom",
+  "viewport": {
+    "orientation": "landscape",
+    "screen": [960, 540],
+    "room_asset": [1672, 941],
+    "camera": "orthographic_2_5d_follow"
+  },
+  "rooms": {
+    "outside_hall": {
+      "asset_id": "room_outside_hall_r2",
+      "connections": {
+        "left": "west_entry_corridor",
+        "right": "east_entry_corridor",
+        "top_center": "main_hall"
+      },
+      "bottom_wall": "sealed"
+    },
+    "main_hall": {
+      "asset_id": "room_main_hall_r2",
+      "connections": {
+        "bottom_center": "outside_hall",
+        "left_near_bottom": "left_keycard_room",
+        "right_near_bottom": "right_cinema"
+      }
+    },
+    "left_keycard_room": {
+      "asset_id": "room_left_keycard_r2",
+      "connections": {
+        "right_near_bottom": "main_hall"
+      },
+      "door": {
+        "kind": "keycard_locked",
+        "required_item": "keycard_boss"
+      }
+    },
+    "right_cinema": {
+      "asset_id": "room_right_cinema_r2",
+      "connections": {
+        "left_near_bottom": "main_hall"
+      },
+      "door": {
+        "kind": "open_passage"
+      }
+    },
+    "west_entry_corridor": {
+      "asset_id": "room_west_entry_corridor_r2",
+      "derived_from": "Peace Elite replica corridor; windows-left canonical orientation",
+      "connections": {
+        "end": "outside_hall"
+      }
+    },
+    "east_entry_corridor": {
+      "asset_id": "room_east_entry_corridor_r2",
+      "derived_from": "horizontal mirror of west corridor because the supplied replica clip only shows one side",
+      "connections": {
+        "end": "outside_hall"
+      }
+    }
+  },
+  "hard_constraints": [
+    "outside left and right entries are aligned and directly opposed",
+    "outside bottom wall has no door",
+    "outside connects to main only through the centered shared-wall door",
+    "the keycard door is the left side-room door",
+    "the cinema opening is on the right partition near the outside hall",
+    "no rejected character asset is referenced"
+  ]
+}

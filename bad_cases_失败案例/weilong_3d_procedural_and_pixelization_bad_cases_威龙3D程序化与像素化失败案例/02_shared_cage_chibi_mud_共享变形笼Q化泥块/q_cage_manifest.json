@@ -1,0 +1,14 @@
+{
+  "canvas" : [
+    128,
+    128
+  ],
+  "dithering" : false,
+  "fullCharacterSingleRender" : true,
+  "hardAlpha" : true,
+  "note" : "One shared 3D lattice deforms the complete character; no body-region compositing.",
+  "output" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/q_stylecard\/weilong_q_front_128.png",
+  "paletteMaximum" : 18,
+  "source" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/q_stylecard_highres\/weilong_q_front.png",
+  "status" : "STYLE_CALIBRATION_ONLY"
+}

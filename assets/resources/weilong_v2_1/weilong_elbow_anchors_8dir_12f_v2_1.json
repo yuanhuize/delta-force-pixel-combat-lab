@@ -1,0 +1,2480 @@
+{
+  "schemaVersion": "2.1",
+  "directions": [
+    "Down",
+    "DownRight",
+    "Right",
+    "UpRight",
+    "Up",
+    "UpLeft",
+    "Left",
+    "DownLeft"
+  ],
+  "framesPerDirection": 12,
+  "coordinateSpace": "128x128 integer pixels, origin top-left",
+  "footPoint": [
+    64,
+    116
+  ],
+  "derivation": "changed rows derive distal-arm clear from the exact same complete-person pose; six frozen rows copied byte-exact from V2",
+  "zOrderSuggestion": {
+    "Down": [
+      "far_hand_weapon",
+      "body_core",
+      "near_hand_weapon"
+    ],
+    "DownRight": [
+      "far_hand_weapon",
+      "body_core",
+      "near_hand_weapon"
+    ],
+    "Right": [
+      "far_hand_weapon",
+      "body_core",
+      "near_hand_weapon"
+    ],
+    "UpRight": [
+      "far_hand_weapon",
+      "near_hand_weapon",
+      "body_core"
+    ],
+    "Up": [
+      "far_hand_weapon",
+      "near_hand_weapon",
+      "body_core"
+    ],
+    "UpLeft": [
+      "far_hand_weapon",
+      "near_hand_weapon",
+      "body_core"
+    ],
+    "Left": [
+      "far_hand_weapon",
+      "body_core",
+      "near_hand_weapon"
+    ],
+    "DownLeft": [
+      "far_hand_weapon",
+      "body_core",
+      "near_hand_weapon"
+    ]
+  },
+  "frames": {
+    "Down": [
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          92,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 0
+      },
+      {
+        "leftElbow": [
+          48,
+          66
+        ],
+        "rightElbow": [
+          80,
+          66
+        ],
+        "leftCutRect": [
+          36,
+          68,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          68,
+          89,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 1
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          92,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 2
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          39,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          89,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 3
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          91,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 4
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          39,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          93,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 5
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          89,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 6
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          88,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 7
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          90,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 8
+      },
+      {
+        "leftElbow": [
+          48,
+          68
+        ],
+        "rightElbow": [
+          80,
+          68
+        ],
+        "leftCutRect": [
+          38,
+          70,
+          53,
+          88
+        ],
+        "rightCutRect": [
+          75,
+          70,
+          91,
+          88
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 9
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          91,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 10
+      },
+      {
+        "leftElbow": [
+          48,
+          68
+        ],
+        "rightElbow": [
+          80,
+          68
+        ],
+        "leftCutRect": [
+          39,
+          70,
+          53,
+          88
+        ],
+        "rightCutRect": [
+          75,
+          70,
+          91,
+          88
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 11
+      }
+    ],
+    "DownRight": [
+      {
+        "leftElbow": [
+          48,
+          65
+        ],
+        "rightElbow": [
+          80,
+          65
+        ],
+        "leftCutRect": [
+          41,
+          67,
+          53,
+          86
+        ],
+        "rightCutRect": [
+          75,
+          67,
+          93,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 0
+      },
+      {
+        "leftElbow": [
+          49,
+          65
+        ],
+        "rightElbow": [
+          79,
+          65
+        ],
+        "leftCutRect": [
+          42,
+          67,
+          54,
+          86
+        ],
+        "rightCutRect": [
+          74,
+          67,
+          92,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 1
+      },
+      {
+        "leftElbow": [
+          47,
+          65
+        ],
+        "rightElbow": [
+          81,
+          65
+        ],
+        "leftCutRect": [
+          35,
+          67,
+          52,
+          86
+        ],
+        "rightCutRect": [
+          76,
+          67,
+          92,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 2
+      },
+      {
+        "leftElbow": [
+          49,
+          65
+        ],
+        "rightElbow": [
+          79,
+          65
+        ],
+        "leftCutRect": [
+          42,
+          67,
+          54,
+          86
+        ],
+        "rightCutRect": [
+          74,
+          67,
+          91,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 3
+      },
+      {
+        "leftElbow": [
+          48,
+          65
+        ],
+        "rightElbow": [
+          80,
+          65
+        ],
+        "leftCutRect": [
+          41,
+          67,
+          53,
+          85
+        ],
+        "rightCutRect": [
+          75,
+          67,
+          93,
+          85
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 4
+      },
+      {
+        "leftElbow": [
+          48,
+          65
+        ],
+        "rightElbow": [
+          80,
+          65
+        ],
+        "leftCutRect": [
+          39,
+          67,
+          53,
+          86
+        ],
+        "rightCutRect": [
+          75,
+          67,
+          92,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 5
+      },
+      {
+        "leftElbow": [
+          49,
+          66
+        ],
+        "rightElbow": [
+          79,
+          66
+        ],
+        "leftCutRect": [
+          41,
+          68,
+          54,
+          86
+        ],
+        "rightCutRect": [
+          74,
+          68,
+          92,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 6
+      },
+      {
+        "leftElbow": [
+          46,
+          66
+        ],
+        "rightElbow": [
+          82,
+          66
+        ],
+        "leftCutRect": [
+          35,
+          68,
+          51,
+          87
+        ],
+        "rightCutRect": [
+          77,
+          68,
+          94,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 7
+      },
+      {
+        "leftElbow": [
+          47,
+          67
+        ],
+        "rightElbow": [
+          81,
+          67
+        ],
+        "leftCutRect": [
+          34,
+          69,
+          52,
+          87
+        ],
+        "rightCutRect": [
+          76,
+          69,
+          92,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 8
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          41,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          92,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 9
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          40,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          91,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 10
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          42,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          90,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 11
+      }
+    ],
+    "Right": [
+      {
+        "leftElbow": [
+          45,
+          66
+        ],
+        "rightElbow": [
+          83,
+          66
+        ],
+        "leftCutRect": [
+          31,
+          68,
+          50,
+          86
+        ],
+        "rightCutRect": [
+          78,
+          68,
+          93,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 0
+      },
+      {
+        "leftElbow": [
+          48,
+          65
+        ],
+        "rightElbow": [
+          80,
+          65
+        ],
+        "leftCutRect": [
+          35,
+          67,
+          53,
+          85
+        ],
+        "rightCutRect": [
+          75,
+          67,
+          87,
+          85
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 1
+      },
+      {
+        "leftElbow": [
+          46,
+          66
+        ],
+        "rightElbow": [
+          82,
+          66
+        ],
+        "leftCutRect": [
+          33,
+          68,
+          51,
+          86
+        ],
+        "rightCutRect": [
+          77,
+          68,
+          94,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 2
+      },
+      {
+        "leftElbow": [
+          43,
+          65
+        ],
+        "rightElbow": [
+          85,
+          65
+        ],
+        "leftCutRect": [
+          26,
+          67,
+          48,
+          86
+        ],
+        "rightCutRect": [
+          80,
+          67,
+          97,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 3
+      },
+      {
+        "leftElbow": [
+          48,
+          66
+        ],
+        "rightElbow": [
+          80,
+          66
+        ],
+        "leftCutRect": [
+          34,
+          68,
+          53,
+          86
+        ],
+        "rightCutRect": [
+          75,
+          68,
+          89,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 4
+      },
+      {
+        "leftElbow": [
+          47,
+          66
+        ],
+        "rightElbow": [
+          81,
+          66
+        ],
+        "leftCutRect": [
+          32,
+          68,
+          52,
+          86
+        ],
+        "rightCutRect": [
+          76,
+          68,
+          88,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 5
+      },
+      {
+        "leftElbow": [
+          48,
+          66
+        ],
+        "rightElbow": [
+          80,
+          66
+        ],
+        "leftCutRect": [
+          35,
+          68,
+          53,
+          86
+        ],
+        "rightCutRect": [
+          75,
+          68,
+          87,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 6
+      },
+      {
+        "leftElbow": [
+          51,
+          66
+        ],
+        "rightElbow": [
+          77,
+          66
+        ],
+        "leftCutRect": [
+          43,
+          68,
+          56,
+          86
+        ],
+        "rightCutRect": [
+          72,
+          68,
+          86,
+          86
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 7
+      },
+      {
+        "leftElbow": [
+          51,
+          66
+        ],
+        "rightElbow": [
+          77,
+          66
+        ],
+        "leftCutRect": [
+          43,
+          68,
+          56,
+          87
+        ],
+        "rightCutRect": [
+          72,
+          68,
+          86,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 8
+      },
+      {
+        "leftElbow": [
+          45,
+          68
+        ],
+        "rightElbow": [
+          83,
+          68
+        ],
+        "leftCutRect": [
+          29,
+          70,
+          50,
+          88
+        ],
+        "rightCutRect": [
+          78,
+          70,
+          93,
+          88
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 9
+      },
+      {
+        "leftElbow": [
+          45,
+          67
+        ],
+        "rightElbow": [
+          83,
+          67
+        ],
+        "leftCutRect": [
+          29,
+          69,
+          50,
+          87
+        ],
+        "rightCutRect": [
+          78,
+          69,
+          91,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 10
+      },
+      {
+        "leftElbow": [
+          50,
+          66
+        ],
+        "rightElbow": [
+          78,
+          66
+        ],
+        "leftCutRect": [
+          43,
+          68,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          68,
+          88,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 11
+      }
+    ],
+    "UpRight": [
+      {
+        "leftElbow": [
+          48,
+          65
+        ],
+        "rightElbow": [
+          80,
+          65
+        ],
+        "leftCutRect": [
+          36,
+          67,
+          53,
+          86
+        ],
+        "rightCutRect": [
+          75,
+          67,
+          88,
+          86
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 0
+      },
+      {
+        "leftElbow": [
+          48,
+          65
+        ],
+        "rightElbow": [
+          80,
+          65
+        ],
+        "leftCutRect": [
+          36,
+          67,
+          53,
+          86
+        ],
+        "rightCutRect": [
+          75,
+          67,
+          89,
+          86
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 1
+      },
+      {
+        "leftElbow": [
+          48,
+          66
+        ],
+        "rightElbow": [
+          80,
+          66
+        ],
+        "leftCutRect": [
+          36,
+          68,
+          53,
+          86
+        ],
+        "rightCutRect": [
+          75,
+          68,
+          88,
+          86
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 2
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          43,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          91,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 3
+      },
+      {
+        "leftElbow": [
+          48,
+          66
+        ],
+        "rightElbow": [
+          80,
+          66
+        ],
+        "leftCutRect": [
+          37,
+          68,
+          53,
+          86
+        ],
+        "rightCutRect": [
+          75,
+          68,
+          89,
+          86
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 4
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          43,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          92,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 5
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          43,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          91,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 6
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          42,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          92,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 7
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          41,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          92,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 8
+      },
+      {
+        "leftElbow": [
+          49,
+          68
+        ],
+        "rightElbow": [
+          79,
+          68
+        ],
+        "leftCutRect": [
+          41,
+          70,
+          54,
+          88
+        ],
+        "rightCutRect": [
+          74,
+          70,
+          90,
+          88
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 9
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          41,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          92,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 10
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          42,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          89,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 11
+      }
+    ],
+    "Up": [
+      {
+        "leftElbow": [
+          49,
+          66
+        ],
+        "rightElbow": [
+          79,
+          66
+        ],
+        "leftCutRect": [
+          39,
+          68,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          68,
+          90,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 0
+      },
+      {
+        "leftElbow": [
+          48,
+          66
+        ],
+        "rightElbow": [
+          80,
+          66
+        ],
+        "leftCutRect": [
+          37,
+          68,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          68,
+          90,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 1
+      },
+      {
+        "leftElbow": [
+          48,
+          66
+        ],
+        "rightElbow": [
+          80,
+          66
+        ],
+        "leftCutRect": [
+          38,
+          68,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          68,
+          90,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 2
+      },
+      {
+        "leftElbow": [
+          49,
+          66
+        ],
+        "rightElbow": [
+          79,
+          66
+        ],
+        "leftCutRect": [
+          38,
+          68,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          68,
+          88,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 3
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          89,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 4
+      },
+      {
+        "leftElbow": [
+          48,
+          66
+        ],
+        "rightElbow": [
+          80,
+          66
+        ],
+        "leftCutRect": [
+          38,
+          68,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          68,
+          91,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 5
+      },
+      {
+        "leftElbow": [
+          48,
+          68
+        ],
+        "rightElbow": [
+          80,
+          68
+        ],
+        "leftCutRect": [
+          38,
+          70,
+          53,
+          88
+        ],
+        "rightCutRect": [
+          75,
+          70,
+          90,
+          88
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 6
+      },
+      {
+        "leftElbow": [
+          49,
+          66
+        ],
+        "rightElbow": [
+          79,
+          66
+        ],
+        "leftCutRect": [
+          38,
+          68,
+          54,
+          86
+        ],
+        "rightCutRect": [
+          74,
+          68,
+          89,
+          86
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 7
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          39,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          89,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 8
+      },
+      {
+        "leftElbow": [
+          49,
+          66
+        ],
+        "rightElbow": [
+          79,
+          66
+        ],
+        "leftCutRect": [
+          38,
+          68,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          68,
+          89,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 9
+      },
+      {
+        "leftElbow": [
+          49,
+          66
+        ],
+        "rightElbow": [
+          79,
+          66
+        ],
+        "leftCutRect": [
+          38,
+          68,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          68,
+          89,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 10
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          89,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 11
+      }
+    ],
+    "UpLeft": [
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          36,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          87,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 0
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          37,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          88,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 1
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          36,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          90,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 2
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          40,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          88,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 3
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          86,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 4
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          39,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          86,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 5
+      },
+      {
+        "leftElbow": [
+          49,
+          68
+        ],
+        "rightElbow": [
+          79,
+          68
+        ],
+        "leftCutRect": [
+          38,
+          70,
+          54,
+          88
+        ],
+        "rightCutRect": [
+          74,
+          70,
+          87,
+          88
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 6
+      },
+      {
+        "leftElbow": [
+          50,
+          68
+        ],
+        "rightElbow": [
+          78,
+          68
+        ],
+        "leftCutRect": [
+          39,
+          70,
+          55,
+          88
+        ],
+        "rightCutRect": [
+          73,
+          70,
+          86,
+          88
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 7
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          86,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 8
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          39,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          87,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 9
+      },
+      {
+        "leftElbow": [
+          49,
+          68
+        ],
+        "rightElbow": [
+          79,
+          68
+        ],
+        "leftCutRect": [
+          40,
+          70,
+          54,
+          88
+        ],
+        "rightCutRect": [
+          74,
+          70,
+          90,
+          88
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 10
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          40,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          86,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 11
+      }
+    ],
+    "Left": [
+      {
+        "leftElbow": [
+          49,
+          66
+        ],
+        "rightElbow": [
+          79,
+          66
+        ],
+        "leftCutRect": [
+          42,
+          68,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          68,
+          92,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 0
+      },
+      {
+        "leftElbow": [
+          47,
+          66
+        ],
+        "rightElbow": [
+          81,
+          66
+        ],
+        "leftCutRect": [
+          40,
+          68,
+          52,
+          87
+        ],
+        "rightCutRect": [
+          76,
+          68,
+          97,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 1
+      },
+      {
+        "leftElbow": [
+          49,
+          66
+        ],
+        "rightElbow": [
+          79,
+          66
+        ],
+        "leftCutRect": [
+          42,
+          68,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          68,
+          93,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 2
+      },
+      {
+        "leftElbow": [
+          46,
+          66
+        ],
+        "rightElbow": [
+          82,
+          66
+        ],
+        "leftCutRect": [
+          41,
+          68,
+          51,
+          87
+        ],
+        "rightCutRect": [
+          77,
+          68,
+          102,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 3
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          44,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          90,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 4
+      },
+      {
+        "leftElbow": [
+          48,
+          66
+        ],
+        "rightElbow": [
+          80,
+          66
+        ],
+        "leftCutRect": [
+          42,
+          68,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          68,
+          94,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 5
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          44,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          92,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 6
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          41,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          95,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 7
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          42,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          93,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 8
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          41,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          95,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 9
+      },
+      {
+        "leftElbow": [
+          47,
+          67
+        ],
+        "rightElbow": [
+          81,
+          67
+        ],
+        "leftCutRect": [
+          40,
+          69,
+          52,
+          87
+        ],
+        "rightCutRect": [
+          76,
+          69,
+          96,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 10
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          44,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          93,
+          87
+        ],
+        "nearArm": "left",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 11
+      }
+    ],
+    "DownLeft": [
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          37,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          88,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 0
+      },
+      {
+        "leftElbow": [
+          49,
+          66
+        ],
+        "rightElbow": [
+          79,
+          66
+        ],
+        "leftCutRect": [
+          36,
+          68,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          68,
+          86,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 1
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          37,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          85,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 2
+      },
+      {
+        "leftElbow": [
+          50,
+          66
+        ],
+        "rightElbow": [
+          78,
+          66
+        ],
+        "leftCutRect": [
+          38,
+          68,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          68,
+          85,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 3
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          91,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 4
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          37,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          86,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 5
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          37,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          88,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 6
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          37,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          89,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 7
+      },
+      {
+        "leftElbow": [
+          50,
+          67
+        ],
+        "rightElbow": [
+          78,
+          67
+        ],
+        "leftCutRect": [
+          37,
+          69,
+          55,
+          87
+        ],
+        "rightCutRect": [
+          73,
+          69,
+          85,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 8
+      },
+      {
+        "leftElbow": [
+          48,
+          67
+        ],
+        "rightElbow": [
+          80,
+          67
+        ],
+        "leftCutRect": [
+          36,
+          69,
+          53,
+          87
+        ],
+        "rightCutRect": [
+          75,
+          69,
+          88,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 9
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          38,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          87,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 10
+      },
+      {
+        "leftElbow": [
+          49,
+          67
+        ],
+        "rightElbow": [
+          79,
+          67
+        ],
+        "leftCutRect": [
+          36,
+          69,
+          54,
+          87
+        ],
+        "rightCutRect": [
+          74,
+          69,
+          86,
+          87
+        ],
+        "nearArm": "right",
+        "derivation": "alpha clear from exact same complete-person pose; exact-source elbow cap restored",
+        "walkFrame": 11
+      }
+    ]
+  }
+}

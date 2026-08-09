@@ -1,0 +1,328 @@
+{
+  "action" : "WL2D_run_forward_fullbody",
+  "actionFps" : 30,
+  "atlas" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/weilong_run_forward_1dir_12f.png",
+  "atlasFrames" : [
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_00",
+      "rect" : [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_01",
+      "rect" : [
+        128,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_02",
+      "rect" : [
+        256,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_03",
+      "rect" : [
+        384,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_04",
+      "rect" : [
+        512,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_05",
+      "rect" : [
+        640,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_06",
+      "rect" : [
+        768,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_07",
+      "rect" : [
+        896,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_08",
+      "rect" : [
+        1024,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_09",
+      "rect" : [
+        1152,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_10",
+      "rect" : [
+        1280,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "duration" : 0.055555555555555552,
+      "footAnchorTopLeft" : [
+        64,
+        116
+      ],
+      "name" : "run_forward_down_11",
+      "rect" : [
+        1408,
+        0,
+        128,
+        128
+      ]
+    }
+  ],
+  "atlasLayout" : "one row, time increases left-to-right",
+  "bakedBlend" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/weilong_fullbody_source_actions.blend",
+  "cell" : [
+    128,
+    128
+  ],
+  "dither" : false,
+  "fixedWholeFrameYOffset" : -8,
+  "frameCount" : 12,
+  "fullCharacterSingleRender" : true,
+  "gif" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/weilong_run_forward_1dir_12f.gif",
+  "paletteMaximum" : 52,
+  "perFrameScaling" : false,
+  "playbackFps" : 18,
+  "previewGif" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/weilong_run_forward_1dir_12f_preview_green_4x.gif",
+  "qa" : [
+    {
+      "bbox" : [
+        37,
+        7,
+        89,
+        116
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f00.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 46
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        88,
+        116
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f01.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 44
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        88,
+        116
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f02.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 42
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        86,
+        115
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f03.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 40
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        85,
+        115
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f04.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 43
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        86,
+        114
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f05.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 43
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        86,
+        114
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f06.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 47
+    },
+    {
+      "bbox" : [
+        36,
+        7,
+        84,
+        115
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f07.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 43
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        82,
+        116
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f08.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 45
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        82,
+        116
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f09.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 46
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        84,
+        116
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f10.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 43
+    },
+    {
+      "bbox" : [
+        37,
+        7,
+        87,
+        116
+      ],
+      "file" : "\/Users\/yuanhuize\/codex work\/三角洲行动-像素版\/art_demos\/weilong_3d_to_2d_rebuild\/run_fullbody_pixel\/run_f11.png",
+      "hardAlpha" : true,
+      "opaqueColours" : 43
+    }
+  ],
+  "sameSkeletonTimeCamera" : true,
+  "sourceBlend" : "\/Users\/yuanhuize\/Downloads\/三角洲项目文件\/威龙_凌霄\/工程.blend",
+  "status" : "ONE_DIRECTION_RUN_STYLE_CANDIDATE",
+  "upperLowerBodySplicing" : false
+}
